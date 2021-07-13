@@ -11,8 +11,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let delegates: [UICollectionViewDelegateFlowLayout]
-        = [NearbyDestinationDelegate(), TravelStyleDelegate()]
+    lazy var coordinator = MainCoordinator(navigationController: navigationController!)
+    private lazy var delegates: [UICollectionViewDelegateFlowLayout]
+        = [NearbyDestinationDelegate(coordinator: coordinator), TravelStyleDelegate()]
     private let dataSources: [UICollectionViewDataSource]
         = [NearbyDestinationDataSource(), TravelStyleDataSource()]
     private let cells = [NearbyDestinationCell.self, TravelStyleCell.self]
@@ -34,7 +35,9 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MainHeaderView.identifier, for: indexPath)
         return header
     }
@@ -42,7 +45,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
             let width = view.frame.width
-            return CGSize(width: width, height: width)
+            return CGSize(width: width, height: width + 100)
         }
         return .zero
     }

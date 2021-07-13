@@ -22,6 +22,8 @@
 		D075750E269DDC4A0083980B /* wanju.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D075750D269DDC4A0083980B /* wanju.jpg */; };
 		D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */; };
 		D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */; };
+		D0757515269E0E590083980B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757514269E0E590083980B /* ResultViewController.swift */; };
+		D0757517269E12850083980B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757516269E12850083980B /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		D075750D269DDC4A0083980B /* wanju.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wanju.jpg; sourceTree = "<group>"; };
 		D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationDelegate.swift; sourceTree = "<group>"; };
 		D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleDelegate.swift; sourceTree = "<group>"; };
+		D0757514269E0E590083980B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D0757516269E12850083980B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 				D07574EC269DA3E60083980B /* AppDelegate.swift */,
 				D07574EE269DA3E60083980B /* SceneDelegate.swift */,
 				D07574F0269DA3E60083980B /* ViewController.swift */,
+				D0757514269E0E590083980B /* ResultViewController.swift */,
 				D0757511269DDE650083980B /* Delegates */,
 				D075750C269DD8CB0083980B /* Cells */,
 				D0757500269DAB490083980B /* MainHeaderView.swift */,
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */,
+				D0757516269E12850083980B /* MainCoordinator.swift */,
 				D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */,
 			);
 			path = Delegates;
@@ -183,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */,
+				D0757517269E12850083980B /* MainCoordinator.swift in Sources */,
 				D0757501269DAB490083980B /* MainHeaderView.swift in Sources */,
 				D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */,
 				D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */,
@@ -192,6 +199,7 @@
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,
+				D0757515269E0E590083980B /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

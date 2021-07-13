@@ -8,11 +8,21 @@
 import UIKit
 
 class NearbyDestinationDelegate: NSObject, UICollectionViewDelegateFlowLayout {
+    var coordinator: Coordinator
+    
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: NearbyDestinationCell.cellSize + 70,
                       height: NearbyDestinationCell.cellSize)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator.show()
     }
 }
 
