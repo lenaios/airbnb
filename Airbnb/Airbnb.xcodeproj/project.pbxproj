@@ -16,6 +16,12 @@
 		D0757501269DAB490083980B /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757500269DAB490083980B /* MainHeaderView.swift */; };
 		D0757503269DB1A50083980B /* jeju.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0757502269DB1A50083980B /* jeju.jpg */; };
 		D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */; };
+		D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757506269DD33F0083980B /* NearbyDestinationCell.swift */; };
+		D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757508269DD8A70083980B /* MainCollectionViewCell.swift */; };
+		D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750A269DD8B90083980B /* TravelStyleCell.swift */; };
+		D075750E269DDC4A0083980B /* wanju.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D075750D269DDC4A0083980B /* wanju.jpg */; };
+		D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */; };
+		D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		D0757500269DAB490083980B /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
 		D0757502269DB1A50083980B /* jeju.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jeju.jpg; sourceTree = "<group>"; };
 		D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		D0757506269DD33F0083980B /* NearbyDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationCell.swift; sourceTree = "<group>"; };
+		D0757508269DD8A70083980B /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		D075750A269DD8B90083980B /* TravelStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleCell.swift; sourceTree = "<group>"; };
+		D075750D269DDC4A0083980B /* wanju.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wanju.jpg; sourceTree = "<group>"; };
+		D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationDelegate.swift; sourceTree = "<group>"; };
+		D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,15 +77,37 @@
 				D07574EC269DA3E60083980B /* AppDelegate.swift */,
 				D07574EE269DA3E60083980B /* SceneDelegate.swift */,
 				D07574F0269DA3E60083980B /* ViewController.swift */,
+				D0757511269DDE650083980B /* Delegates */,
+				D075750C269DD8CB0083980B /* Cells */,
 				D0757500269DAB490083980B /* MainHeaderView.swift */,
 				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
 				D07574F5269DA3E70083980B /* Assets.xcassets */,
 				D0757502269DB1A50083980B /* jeju.jpg */,
+				D075750D269DDC4A0083980B /* wanju.jpg */,
 				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
 				D07574FA269DA3E70083980B /* Info.plist */,
 			);
 			path = Airbnb;
+			sourceTree = "<group>";
+		};
+		D075750C269DD8CB0083980B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0757506269DD33F0083980B /* NearbyDestinationCell.swift */,
+				D075750A269DD8B90083980B /* TravelStyleCell.swift */,
+				D0757508269DD8A70083980B /* MainCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D0757511269DDE650083980B /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */,
+				D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +170,7 @@
 				D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */,
 				D0757503269DB1A50083980B /* jeju.jpg in Resources */,
 				D07574F6269DA3E70083980B /* Assets.xcassets in Resources */,
+				D075750E269DDC4A0083980B /* wanju.jpg in Resources */,
 				D07574F4269DA3E60083980B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,11 +182,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */,
 				D0757501269DAB490083980B /* MainHeaderView.swift in Sources */,
+				D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */,
+				D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */,
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
+				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
+				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,12 +11,23 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private let delegates: [UICollectionViewDelegateFlowLayout]
+        = [NearbyDestinationDelegate(), TravelStyleDelegate()]
+    private let dataSources: [UICollectionViewDataSource]
+        = [NearbyDestinationDataSource(), TravelStyleDataSource()]
+    private let cells = [NearbyDestinationCell.self, TravelStyleCell.self]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
         collectionView.register(MainHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: MainHeaderView.identifier)
+        collectionView.register(MainCollectionViewCell.self,
+                                forCellWithReuseIdentifier: MainCollectionViewCell.identifier)
         collectionView.contentInsetAdjustmentBehavior = .never
     }
 }
@@ -29,19 +40,32 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let width = view.frame.width
-        return CGSize(width: width, height: width)
+        if section == 0 {
+            let width = view.frame.width
+            return CGSize(width: width, height: width)
+        }
+        return .zero
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        50
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .yellow
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else {
+            fatalError()
+        }
+        cell.register(cells[indexPath.section])
+        cell.setup(delegate: delegates[indexPath.section])
+        cell.setup(dataSource: dataSources[indexPath.section])
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: NearbyDestinationCell.cellSize * 2 + 20 + 10)
+    }
 }
