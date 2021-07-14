@@ -9,6 +9,8 @@ import UIKit
 
 class NavigationBar: UIView {
     
+    var coordinator: Coordinator?
+    
     @IBOutlet var backButton: UIButton!
     @IBOutlet var shareButton: UIButton!
     @IBOutlet var heartButton: UIButton!
@@ -18,5 +20,9 @@ class NavigationBar: UIView {
         backButton.layer.cornerRadius = backButton.frame.width / 2
         shareButton.layer.cornerRadius = shareButton.frame.width / 2
         heartButton.layer.cornerRadius = heartButton.frame.width / 2
+    }
+    
+    @IBAction func touchUpBackButton(_ sender: Any) {
+        coordinator?.dismiss()
     }
 }

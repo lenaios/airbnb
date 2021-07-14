@@ -30,6 +30,7 @@
 		D0757521269EB0B80083980B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757520269EB0B80083980B /* ImageCell.swift */; };
 		D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757524269EBDDD0083980B /* NavigationBar.xib */; };
 		D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757526269EBF7B0083980B /* NavigationBar.swift */; };
+		D0757529269EE5270083980B /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757528269EE5270083980B /* DetailImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		D0757520269EB0B80083980B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D0757524269EBDDD0083980B /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		D0757526269EBF7B0083980B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		D0757528269EE5270083980B /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
 				D0757520269EB0B80083980B /* ImageCell.swift */,
+				D0757528269EE5270083980B /* DetailImageCell.swift */,
 				D07574F5269DA3E70083980B /* Assets.xcassets */,
 				D0757502269DB1A50083980B /* jeju.jpg */,
 				D075750D269DDC4A0083980B /* wanju.jpg */,
@@ -218,6 +221,7 @@
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
 				D0757521269EB0B80083980B /* ImageCell.swift in Sources */,
+				D0757529269EE5270083980B /* DetailImageCell.swift in Sources */,
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,

@@ -9,6 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var coordinator: Coordinator?
+    
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -48,9 +50,10 @@ class DetailViewController: UIViewController {
     }
     
     private func addNavigationBar() {
-        guard let navigationBar = Bundle.main.loadNibNamed("NavigationBar", owner: nil, options: nil)?.first as? UIView else {
+        guard let navigationBar = Bundle.main.loadNibNamed("NavigationBar", owner: nil, options: nil)?.first as? NavigationBar else {
             return
         }
+        navigationBar.coordinator = coordinator
         navigationBar.frame = CGRect(x: 0, y: 34, width: view.frame.width, height: 100)
         view.addSubview(navigationBar)
     }

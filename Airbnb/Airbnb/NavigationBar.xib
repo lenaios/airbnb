@@ -25,6 +25,9 @@
                     <state key="normal" image="chevron.backward" catalog="system">
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="22"/>
                     </state>
+                    <connections>
+                        <action selector="touchUpBackButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="2Qo-1X-vci"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vse-HY-DRG">
                     <rect key="frame" x="360" y="0.0" width="44" height="44"/>

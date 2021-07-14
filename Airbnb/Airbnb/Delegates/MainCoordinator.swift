@@ -12,6 +12,13 @@ protocol Coordinator {
     var navigationController: UINavigationController { get set }
     
     func show()
+    func dismiss()
+}
+
+extension Coordinator {
+    func dismiss() {
+        navigationController.popViewController(animated: true)
+    }
 }
 
 class MainCoordinator: Coordinator {
@@ -31,15 +38,28 @@ class MainCoordinator: Coordinator {
 }
 
 class ResultCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    var childCoordinators: [Coordinator]
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        childCoordinators = [DetailCoordinator(navigationController: navigationController)]
+        self.navigationController = navigationController
+    }
+    
+    func show() {
+        let vc = DetailViewController.instantiate()
+        vc.coordinator = childCoordinators.first
+        navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+class DetailCoordinator: Coordinator {
+    var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func show() {
-        let vc = DetailViewController.instantiate()
-        navigationController.pushViewController(vc, animated: true)
-    }
+    func show() { }
 }
