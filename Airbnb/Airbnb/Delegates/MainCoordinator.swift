@@ -15,15 +15,31 @@ protocol Coordinator {
 }
 
 class MainCoordinator: Coordinator {
-    var childCoordinators = [Coordinator]()
+    var childCoordinators: [Coordinator]
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        childCoordinators = [ResultCoordinator(navigationController: navigationController)]
     }
 
     func show() {
         let vc = ResultViewController.instantiate()
+        vc.coordinator = childCoordinators.first
+        navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+class ResultCoordinator: Coordinator {
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    func show() {
+        let vc = DetailViewController.instantiate()
         navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    lazy var coordinator = MainCoordinator(navigationController: navigationController!)
+    lazy var coordinator: Coordinator = MainCoordinator(navigationController: navigationController!)
     
     private lazy var delegates: [UICollectionViewDelegateFlowLayout]
         = [NearbyDestinationDelegate(coordinator: coordinator), TravelStyleDelegate()]
@@ -45,7 +45,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         return header
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
         if section == 0 {
             let width = view.frame.width
             return CGSize(width: width, height: width + 100)
@@ -57,11 +59,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         return 2
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.identifier, for: indexPath) as? MainCollectionViewCell else {
             fatalError()
         }
@@ -71,7 +75,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: NearbyDestinationCell.cellSize * 2 + 20 + 10)
     }
 }

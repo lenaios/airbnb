@@ -9,6 +9,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    var coordinator: Coordinator?
     let padding: CGFloat = 15
     
     private let collectionView: UICollectionView = {
@@ -21,7 +22,7 @@ class ResultViewController: UIViewController {
         return collectionView
     }()
     
-    static func instantiate() -> UIViewController {
+    static func instantiate() -> ResultViewController {
         return ResultViewController()
     }
     
@@ -46,6 +47,10 @@ extension ResultViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         .init(top: padding, left: padding, bottom: padding, right: padding)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator?.show()
     }
 }
 

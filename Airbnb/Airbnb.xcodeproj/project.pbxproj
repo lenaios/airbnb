@@ -27,6 +27,7 @@
 		D075751A269E13720083980B /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757518269E13720083980B /* ResultCollectionViewCell.swift */; };
 		D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* ResultCollectionViewCell.xib */; };
 		D075751D269E21F30083980B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075751C269E21F30083980B /* DetailViewController.swift */; };
+		D0757521269EB0B80083980B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757520269EB0B80083980B /* ImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D0757518269E13720083980B /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0757519269E13720083980B /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
 		D075751C269E21F30083980B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D0757520269EB0B80083980B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				D0757500269DAB490083980B /* MainHeaderView.swift */,
 				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
+				D0757520269EB0B80083980B /* ImageCell.swift */,
 				D07574F5269DA3E70083980B /* Assets.xcassets */,
 				D0757502269DB1A50083980B /* jeju.jpg */,
 				D075750D269DDC4A0083980B /* wanju.jpg */,
@@ -206,6 +209,7 @@
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
+				D0757521269EB0B80083980B /* ImageCell.swift in Sources */,
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,
