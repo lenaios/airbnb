@@ -26,9 +26,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        view.addSubview(collectionView)
+        
+        setupCollectionView()
+        addNavigationBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +39,20 @@ class DetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+    }
+    
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        view.addSubview(collectionView)
+    }
+    
+    private func addNavigationBar() {
+        guard let navigationBar = Bundle.main.loadNibNamed("NavigationBar", owner: nil, options: nil)?.first as? UIView else {
+            return
+        }
+        navigationBar.frame = CGRect(x: 0, y: 34, width: view.frame.width, height: 100)
+        view.addSubview(navigationBar)
     }
 }
 

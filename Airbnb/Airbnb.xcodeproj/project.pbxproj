@@ -28,6 +28,8 @@
 		D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* ResultCollectionViewCell.xib */; };
 		D075751D269E21F30083980B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075751C269E21F30083980B /* DetailViewController.swift */; };
 		D0757521269EB0B80083980B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757520269EB0B80083980B /* ImageCell.swift */; };
+		D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757524269EBDDD0083980B /* NavigationBar.xib */; };
+		D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757526269EBF7B0083980B /* NavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		D0757519269E13720083980B /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
 		D075751C269E21F30083980B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0757520269EB0B80083980B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		D0757524269EBDDD0083980B /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
+		D0757526269EBF7B0083980B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				D075750D269DDC4A0083980B /* wanju.jpg */,
 				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
 				D07574FA269DA3E70083980B /* Info.plist */,
+				D0757524269EBDDD0083980B /* NavigationBar.xib */,
+				D0757526269EBF7B0083980B /* NavigationBar.swift */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -188,6 +194,7 @@
 				D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */,
 				D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */,
 				D0757503269DB1A50083980B /* jeju.jpg in Resources */,
+				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
 				D07574F6269DA3E70083980B /* Assets.xcassets in Resources */,
 				D075750E269DDC4A0083980B /* wanju.jpg in Resources */,
 				D07574F4269DA3E60083980B /* Main.storyboard in Resources */,
@@ -204,6 +211,7 @@
 				D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */,
 				D0757517269E12850083980B /* MainCoordinator.swift in Sources */,
 				D0757501269DAB490083980B /* MainHeaderView.swift in Sources */,
+				D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */,
 				D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */,
 				D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */,
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
