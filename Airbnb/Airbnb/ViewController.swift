@@ -12,10 +12,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     lazy var coordinator = MainCoordinator(navigationController: navigationController!)
+    
     private lazy var delegates: [UICollectionViewDelegateFlowLayout]
         = [NearbyDestinationDelegate(coordinator: coordinator), TravelStyleDelegate()]
+    
     private let dataSources: [UICollectionViewDataSource]
         = [NearbyDestinationDataSource(), TravelStyleDataSource()]
+    
     private let cells = [NearbyDestinationCell.self, TravelStyleCell.self]
     
     override func viewDidLoad() {
