@@ -27,10 +27,12 @@
 		D075751A269E13720083980B /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757518269E13720083980B /* ResultCollectionViewCell.swift */; };
 		D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* ResultCollectionViewCell.xib */; };
 		D075751D269E21F30083980B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075751C269E21F30083980B /* DetailViewController.swift */; };
-		D0757521269EB0B80083980B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757520269EB0B80083980B /* ImageCell.swift */; };
 		D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757524269EBDDD0083980B /* NavigationBar.xib */; };
 		D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757526269EBF7B0083980B /* NavigationBar.swift */; };
-		D0757529269EE5270083980B /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757528269EE5270083980B /* DetailImageCell.swift */; };
+		D0757529269EE5270083980B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757528269EE5270083980B /* ImageCell.swift */; };
+		D075752D269F44E70083980B /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D075752C269F44E70083980B /* Support.storyboard */; };
+		D075752F269F45450083980B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075752E269F45450083980B /* Storyboarded.swift */; };
+		D0757531269F52070083980B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757530269F52070083980B /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,10 +58,12 @@
 		D0757518269E13720083980B /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0757519269E13720083980B /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
 		D075751C269E21F30083980B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D0757520269EB0B80083980B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		D0757524269EBDDD0083980B /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		D0757526269EBF7B0083980B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		D0757528269EE5270083980B /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
+		D0757528269EE5270083980B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		D075752C269F44E70083980B /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
+		D075752E269F45450083980B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		D0757530269F52070083980B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,11 +96,10 @@
 		D07574EB269DA3E60083980B /* Airbnb */ = {
 			isa = PBXGroup;
 			children = (
-				D07574EC269DA3E60083980B /* AppDelegate.swift */,
-				D07574EE269DA3E60083980B /* SceneDelegate.swift */,
+				D0757532269F54BE0083980B /* Supporting Files */,
 				D07574F0269DA3E60083980B /* ViewController.swift */,
-				D0757514269E0E590083980B /* ResultViewController.swift */,
 				D075751C269E21F30083980B /* DetailViewController.swift */,
+				D0757514269E0E590083980B /* ResultViewController.swift */,
 				D0757518269E13720083980B /* ResultCollectionViewCell.swift */,
 				D0757519269E13720083980B /* ResultCollectionViewCell.xib */,
 				D0757511269DDE650083980B /* Delegates */,
@@ -104,15 +107,13 @@
 				D0757500269DAB490083980B /* MainHeaderView.swift */,
 				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
-				D0757520269EB0B80083980B /* ImageCell.swift */,
-				D0757528269EE5270083980B /* DetailImageCell.swift */,
-				D07574F5269DA3E70083980B /* Assets.xcassets */,
+				D0757528269EE5270083980B /* ImageCell.swift */,
 				D0757502269DB1A50083980B /* jeju.jpg */,
 				D075750D269DDC4A0083980B /* wanju.jpg */,
-				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
 				D07574FA269DA3E70083980B /* Info.plist */,
 				D0757524269EBDDD0083980B /* NavigationBar.xib */,
 				D0757526269EBF7B0083980B /* NavigationBar.swift */,
+				D075752C269F44E70083980B /* Support.storyboard */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -135,6 +136,19 @@
 				D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		D0757532269F54BE0083980B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D07574EC269DA3E60083980B /* AppDelegate.swift */,
+				D07574EE269DA3E60083980B /* SceneDelegate.swift */,
+				D07574F5269DA3E70083980B /* Assets.xcassets */,
+				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
+				D075752E269F45450083980B /* Storyboarded.swift */,
+				D0757530269F52070083980B /* UIView+Extension.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +214,7 @@
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
 				D07574F6269DA3E70083980B /* Assets.xcassets in Resources */,
 				D075750E269DDC4A0083980B /* wanju.jpg in Resources */,
+				D075752D269F44E70083980B /* Support.storyboard in Resources */,
 				D07574F4269DA3E60083980B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,13 +235,14 @@
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
-				D0757521269EB0B80083980B /* ImageCell.swift in Sources */,
-				D0757529269EE5270083980B /* DetailImageCell.swift in Sources */,
+				D0757529269EE5270083980B /* ImageCell.swift in Sources */,
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,
 				D075751A269E13720083980B /* ResultCollectionViewCell.swift in Sources */,
 				D0757515269E0E590083980B /* ResultViewController.swift in Sources */,
+				D075752F269F45450083980B /* Storyboarded.swift in Sources */,
+				D0757531269F52070083980B /* UIView+Extension.swift in Sources */,
 				D075751D269E21F30083980B /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

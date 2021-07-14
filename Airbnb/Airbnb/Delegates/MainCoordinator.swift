@@ -47,7 +47,7 @@ class ResultCoordinator: Coordinator {
     }
     
     func show() {
-        let vc = DetailViewController.instantiate()
+        let vc = DetailViewController.instantiate("Support")
         vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
