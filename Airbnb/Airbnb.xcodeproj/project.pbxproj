@@ -30,9 +30,11 @@
 		D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757524269EBDDD0083980B /* NavigationBar.xib */; };
 		D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757526269EBF7B0083980B /* NavigationBar.swift */; };
 		D0757529269EE5270083980B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757528269EE5270083980B /* ImageCell.swift */; };
-		D075752D269F44E70083980B /* Support.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D075752C269F44E70083980B /* Support.storyboard */; };
 		D075752F269F45450083980B /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075752E269F45450083980B /* Storyboarded.swift */; };
 		D0757531269F52070083980B /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757530269F52070083980B /* UIView+Extension.swift */; };
+		D0757534269FD7440083980B /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757533269FD7440083980B /* DescriptionView.swift */; };
+		D0757536269FE0C50083980B /* PurchaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757535269FE0C50083980B /* PurchaseView.xib */; };
+		D0757538269FE0CC0083980B /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757537269FE0CC0083980B /* PurchaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,9 +63,11 @@
 		D0757524269EBDDD0083980B /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		D0757526269EBF7B0083980B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		D0757528269EE5270083980B /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
-		D075752C269F44E70083980B /* Support.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Support.storyboard; sourceTree = "<group>"; };
 		D075752E269F45450083980B /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		D0757530269F52070083980B /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		D0757533269FD7440083980B /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
+		D0757535269FE0C50083980B /* PurchaseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseView.xib; sourceTree = "<group>"; };
+		D0757537269FE0CC0083980B /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +102,10 @@
 			children = (
 				D0757532269F54BE0083980B /* Supporting Files */,
 				D07574F0269DA3E60083980B /* ViewController.swift */,
-				D075751C269E21F30083980B /* DetailViewController.swift */,
 				D0757514269E0E590083980B /* ResultViewController.swift */,
 				D0757518269E13720083980B /* ResultCollectionViewCell.swift */,
 				D0757519269E13720083980B /* ResultCollectionViewCell.xib */,
+				D075751C269E21F30083980B /* DetailViewController.swift */,
 				D0757511269DDE650083980B /* Delegates */,
 				D075750C269DD8CB0083980B /* Cells */,
 				D0757500269DAB490083980B /* MainHeaderView.swift */,
@@ -113,7 +117,9 @@
 				D07574FA269DA3E70083980B /* Info.plist */,
 				D0757524269EBDDD0083980B /* NavigationBar.xib */,
 				D0757526269EBF7B0083980B /* NavigationBar.swift */,
-				D075752C269F44E70083980B /* Support.storyboard */,
+				D0757533269FD7440083980B /* DescriptionView.swift */,
+				D0757535269FE0C50083980B /* PurchaseView.xib */,
+				D0757537269FE0CC0083980B /* PurchaseView.swift */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -214,8 +220,8 @@
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
 				D07574F6269DA3E70083980B /* Assets.xcassets in Resources */,
 				D075750E269DDC4A0083980B /* wanju.jpg in Resources */,
-				D075752D269F44E70083980B /* Support.storyboard in Resources */,
 				D07574F4269DA3E60083980B /* Main.storyboard in Resources */,
+				D0757536269FE0C50083980B /* PurchaseView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,10 +235,12 @@
 				D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */,
 				D0757517269E12850083980B /* MainCoordinator.swift in Sources */,
 				D0757501269DAB490083980B /* MainHeaderView.swift in Sources */,
+				D0757538269FE0CC0083980B /* PurchaseView.swift in Sources */,
 				D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */,
 				D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */,
 				D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */,
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
+				D0757534269FD7440083980B /* DescriptionView.swift in Sources */,
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
 				D0757529269EE5270083980B /* ImageCell.swift in Sources */,
