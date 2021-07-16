@@ -10,4 +10,10 @@ import UIKit
 class PurchaseView: UIView {
     
     @IBOutlet weak var button: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        button.layer.cornerRadius = 10
+        button.clipsToBounds = true
+    }
 }

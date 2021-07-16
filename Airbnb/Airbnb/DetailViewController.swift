@@ -11,18 +11,24 @@ class DetailViewController: UIViewController {
 
     private let scrollView = UIScrollView()
     
+    private let purchaseView: PurchaseView? = PurchaseView.loadFromNib()
+    private let navigationBar: NavigationBar? = NavigationBar.loadFromNib()
+    
     private let imageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ImageCell.self,
                                 forCellWithReuseIdentifier: ImageCell.identifier)
         collectionView.backgroundColor = .systemBackground
+        collectionView.isPagingEnabled = true
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
     
-    private let descriptionView = DescriptionView()
+    private let descriptionView: DescriptionView? = DescriptionView.loadFromNib()
 
     var coordinator: Coordinator?
     
@@ -38,20 +44,16 @@ class DetailViewController: UIViewController {
         imageCollectionView.dataSource = self
         imageCollectionView.frame = CGRect(origin: .zero, size: CGSize(width: view.width, height: view.width))
         scrollView.addSubview(imageCollectionView)
-        
-        scrollView.addSubview(descriptionView)
-        descriptionView.frame = CGRect(x: 0,
-                                       y: imageCollectionView.frame.height,
-                                       width: view.width,
-                                       height: 1000 - view.width)
 
         scrollView.frame = view.bounds
-        scrollView.contentSize = CGSize(width: view.width, height: 1000)
         scrollView.contentInsetAdjustmentBehavior = .never
         view.addSubview(scrollView)
 
         addPurchaseView()
+        addDescriptionView()
         addNavigationBar()
+        
+        scrollView.contentSize = CGSize(width: view.width, height: view.width + descriptionView!.frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +62,7 @@ class DetailViewController: UIViewController {
     }
     
     private func addNavigationBar() {
-        guard let navigationBar = Bundle.main.loadNibNamed("NavigationBar", owner: nil, options: nil)?.first as? NavigationBar else {
+        guard let navigationBar = navigationBar else {
             return
         }
         navigationBar.coordinator = coordinator
@@ -68,8 +70,19 @@ class DetailViewController: UIViewController {
         view.addSubview(navigationBar)
     }
     
+    private func addDescriptionView() {
+        guard let descriptionView = descriptionView else {
+            return
+        }
+        descriptionView.frame = CGRect(x: 0,
+                                       y: imageCollectionView.frame.height,
+                                       width: view.width,
+                                       height: 300)
+        scrollView.addSubview(descriptionView)
+    }
+    
     private func addPurchaseView() {
-        guard let purchaseView = Bundle.main.loadNibNamed("PurchaseView", owner: nil, options: nil)?.first as? PurchaseView else {
+        guard let purchaseView = purchaseView else {
             return
         }
         purchaseView.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +90,7 @@ class DetailViewController: UIViewController {
         NSLayoutConstraint.activate([
             purchaseView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             purchaseView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            purchaseView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            purchaseView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34),
             purchaseView.heightAnchor.constraint(equalToConstant: 74)
         ])
         
@@ -102,5 +115,15 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.width, height: view.width)
+    }
+}
+
+extension UIView {
+    static func loadFromNib<T>() -> T? {
+        let name = String(describing: self)
+        guard let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as? T else {
+            return nil
+        }
+        return view
     }
 }

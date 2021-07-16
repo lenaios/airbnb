@@ -35,7 +35,19 @@
 		D0757534269FD7440083980B /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757533269FD7440083980B /* DescriptionView.swift */; };
 		D0757536269FE0C50083980B /* PurchaseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757535269FE0C50083980B /* PurchaseView.xib */; };
 		D0757538269FE0CC0083980B /* PurchaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757537269FE0CC0083980B /* PurchaseView.swift */; };
+		D0EC355E26A1ACCD00529357 /* AirbnbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EC355D26A1ACCD00529357 /* AirbnbTests.swift */; };
+		D0EC356826A1E91000529357 /* DescriptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EC356726A1E91000529357 /* DescriptionView.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D0EC356026A1ACCD00529357 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D07574E1269DA3E60083980B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D07574E8269DA3E60083980B;
+			remoteInfo = Airbnb;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D07574E9269DA3E60083980B /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,10 +80,21 @@
 		D0757533269FD7440083980B /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		D0757535269FE0C50083980B /* PurchaseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseView.xib; sourceTree = "<group>"; };
 		D0757537269FE0CC0083980B /* PurchaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseView.swift; sourceTree = "<group>"; };
+		D0EC355B26A1ACCD00529357 /* AirbnbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirbnbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0EC355D26A1ACCD00529357 /* AirbnbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirbnbTests.swift; sourceTree = "<group>"; };
+		D0EC355F26A1ACCD00529357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EC356726A1E91000529357 /* DescriptionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D07574E6269DA3E60083980B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EC355826A1ACCD00529357 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D07574EB269DA3E60083980B /* Airbnb */,
+				D0EC355C26A1ACCD00529357 /* AirbnbTests */,
 				D07574EA269DA3E60083980B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D07574E9269DA3E60083980B /* Airbnb.app */,
+				D0EC355B26A1ACCD00529357 /* AirbnbTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,25 +126,16 @@
 			isa = PBXGroup;
 			children = (
 				D0757532269F54BE0083980B /* Supporting Files */,
-				D07574F0269DA3E60083980B /* ViewController.swift */,
 				D0757514269E0E590083980B /* ResultViewController.swift */,
 				D0757518269E13720083980B /* ResultCollectionViewCell.swift */,
 				D0757519269E13720083980B /* ResultCollectionViewCell.xib */,
 				D075751C269E21F30083980B /* DetailViewController.swift */,
-				D0757511269DDE650083980B /* Delegates */,
-				D075750C269DD8CB0083980B /* Cells */,
-				D0757500269DAB490083980B /* MainHeaderView.swift */,
-				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
+				D0EC356A26A1EFEC00529357 /* MainView */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
-				D0757528269EE5270083980B /* ImageCell.swift */,
 				D0757502269DB1A50083980B /* jeju.jpg */,
 				D075750D269DDC4A0083980B /* wanju.jpg */,
 				D07574FA269DA3E70083980B /* Info.plist */,
-				D0757524269EBDDD0083980B /* NavigationBar.xib */,
-				D0757526269EBF7B0083980B /* NavigationBar.swift */,
-				D0757533269FD7440083980B /* DescriptionView.swift */,
-				D0757535269FE0C50083980B /* PurchaseView.xib */,
-				D0757537269FE0CC0083980B /* PurchaseView.swift */,
+				D0EC356926A1EF9300529357 /* DetailView */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -157,6 +173,41 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D0EC355C26A1ACCD00529357 /* AirbnbTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0EC355D26A1ACCD00529357 /* AirbnbTests.swift */,
+				D0EC355F26A1ACCD00529357 /* Info.plist */,
+			);
+			path = AirbnbTests;
+			sourceTree = "<group>";
+		};
+		D0EC356926A1EF9300529357 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D0757524269EBDDD0083980B /* NavigationBar.xib */,
+				D0757526269EBF7B0083980B /* NavigationBar.swift */,
+				D0757533269FD7440083980B /* DescriptionView.swift */,
+				D0EC356726A1E91000529357 /* DescriptionView.xib */,
+				D0757535269FE0C50083980B /* PurchaseView.xib */,
+				D0757537269FE0CC0083980B /* PurchaseView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		D0EC356A26A1EFEC00529357 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				D0757511269DDE650083980B /* Delegates */,
+				D075750C269DD8CB0083980B /* Cells */,
+				D07574F0269DA3E60083980B /* ViewController.swift */,
+				D0757500269DAB490083980B /* MainHeaderView.swift */,
+				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
+				D0757528269EE5270083980B /* ImageCell.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +228,24 @@
 			productReference = D07574E9269DA3E60083980B /* Airbnb.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D0EC355A26A1ACCD00529357 /* AirbnbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0EC356226A1ACCD00529357 /* Build configuration list for PBXNativeTarget "AirbnbTests" */;
+			buildPhases = (
+				D0EC355726A1ACCD00529357 /* Sources */,
+				D0EC355826A1ACCD00529357 /* Frameworks */,
+				D0EC355926A1ACCD00529357 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0EC356126A1ACCD00529357 /* PBXTargetDependency */,
+			);
+			name = AirbnbTests;
+			productName = AirbnbTests;
+			productReference = D0EC355B26A1ACCD00529357 /* AirbnbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -188,6 +257,10 @@
 				TargetAttributes = {
 					D07574E8269DA3E60083980B = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					D0EC355A26A1ACCD00529357 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = D07574E8269DA3E60083980B;
 					};
 				};
 			};
@@ -205,6 +278,7 @@
 			projectRoot = "";
 			targets = (
 				D07574E8269DA3E60083980B /* Airbnb */,
+				D0EC355A26A1ACCD00529357 /* AirbnbTests */,
 			);
 		};
 /* End PBXProject section */
@@ -218,10 +292,18 @@
 				D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */,
 				D0757503269DB1A50083980B /* jeju.jpg in Resources */,
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
+				D0EC356826A1E91000529357 /* DescriptionView.xib in Resources */,
 				D07574F6269DA3E70083980B /* Assets.xcassets in Resources */,
 				D075750E269DDC4A0083980B /* wanju.jpg in Resources */,
 				D07574F4269DA3E60083980B /* Main.storyboard in Resources */,
 				D0757536269FE0C50083980B /* PurchaseView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0EC355926A1ACCD00529357 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +337,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0EC355726A1ACCD00529357 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0EC355E26A1ACCD00529357 /* AirbnbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0EC356126A1ACCD00529357 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D07574E8269DA3E60083980B /* Airbnb */;
+			targetProxy = D0EC356026A1ACCD00529357 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D07574F2269DA3E60083980B /* Main.storyboard */ = {
@@ -429,6 +527,44 @@
 			};
 			name = Release;
 		};
+		D0EC356326A1ACCD00529357 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AirbnbTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lenaios.AirbnbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airbnb.app/Airbnb";
+			};
+			name = Debug;
+		};
+		D0EC356426A1ACCD00529357 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AirbnbTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lenaios.AirbnbTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Airbnb.app/Airbnb";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +582,15 @@
 			buildConfigurations = (
 				D07574FE269DA3E70083980B /* Debug */,
 				D07574FF269DA3E70083980B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0EC356226A1ACCD00529357 /* Build configuration list for PBXNativeTarget "AirbnbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0EC356326A1ACCD00529357 /* Debug */,
+				D0EC356426A1ACCD00529357 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

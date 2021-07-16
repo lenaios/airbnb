@@ -25,7 +25,8 @@ class ResultCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
     }
     
     @IBAction func touchUpHeart(_ sender: Any) {
