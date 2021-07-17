@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +16,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="332" height="293"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nbr-tk-OH6">
-                        <rect key="frame" x="0.0" y="0.5" width="332" height="186.5"/>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Nbr-tk-OH6" secondAttribute="height" multiplier="16:9" id="jqT-jq-ZTG"/>
-                        </constraints>
-                    </imageView>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kyg-Md-7ZA">
+                        <rect key="frame" x="0.0" y="0.0" width="332" height="191"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MbC-FH-6W6">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r92-oj-7Oy">
+                        <rect key="frame" x="0.0" y="196" width="332" height="97"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아파트 전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-r8-l2s">
+                                <rect key="frame" x="0.0" y="0.0" width="332" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연남 감성 루프탑 하우스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTn-M1-C5a">
+                                <rect key="frame" x="0.0" y="25.5" width="332" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩105,500 / 박" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcP-uR-Q5H">
+                                <rect key="frame" x="0.0" y="51" width="332" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총액 ₩105,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rH-dr-4Uh">
+                                <rect key="frame" x="0.0" y="76.5" width="332" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-FQ-2bb">
                         <rect key="frame" x="292" y="10" width="30" height="30"/>
                         <constraints>
@@ -40,58 +70,28 @@
                             <action selector="touchUpHeart:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bra-wf-aDg"/>
                         </connections>
                     </button>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r92-oj-7Oy">
-                        <rect key="frame" x="0.0" y="187" width="332" height="106"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아파트 전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-r8-l2s">
-                                <rect key="frame" x="0.0" y="0.0" width="332" height="22.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연남 감성 루프탑 하우스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTn-M1-C5a">
-                                <rect key="frame" x="0.0" y="27.5" width="332" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩105,500 / 박" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcP-uR-Q5H">
-                                <rect key="frame" x="0.0" y="55.5" width="332" height="22.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총액 ₩105,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rH-dr-4Uh">
-                                <rect key="frame" x="0.0" y="83" width="332" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y7U-GW-oqG">
-                        <rect key="frame" x="87" y="148.5" width="158" height="27.5"/>
+                        <rect key="frame" x="87" y="163.5" width="158" height="27.5"/>
                     </pageControl>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="Nbr-tk-OH6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2nj-KL-nBR"/>
-                <constraint firstItem="Y7U-GW-oqG" firstAttribute="firstBaseline" secondItem="Nbr-tk-OH6" secondAttribute="firstBaseline" id="Nnj-Hc-Lld"/>
-                <constraint firstItem="Y7U-GW-oqG" firstAttribute="centerX" secondItem="Nbr-tk-OH6" secondAttribute="centerX" id="Pwv-Sw-eBp"/>
-                <constraint firstItem="r92-oj-7Oy" firstAttribute="top" secondItem="Nbr-tk-OH6" secondAttribute="bottom" id="QLe-fw-2Yi"/>
+                <constraint firstItem="Y7U-GW-oqG" firstAttribute="centerX" secondItem="kyg-Md-7ZA" secondAttribute="centerX" id="9xp-OI-Xcy"/>
+                <constraint firstItem="Y7U-GW-oqG" firstAttribute="bottom" secondItem="kyg-Md-7ZA" secondAttribute="bottom" id="AnF-ND-u2p"/>
+                <constraint firstItem="r92-oj-7Oy" firstAttribute="top" secondItem="kyg-Md-7ZA" secondAttribute="bottom" constant="5" id="Nhp-fq-Y9E"/>
                 <constraint firstItem="sTz-FQ-2bb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="RBO-av-7kP"/>
                 <constraint firstAttribute="trailing" secondItem="sTz-FQ-2bb" secondAttribute="trailing" constant="10" id="XYO-HQ-kz7"/>
-                <constraint firstAttribute="trailing" secondItem="Nbr-tk-OH6" secondAttribute="trailing" id="Z6g-Ek-tNg"/>
+                <constraint firstItem="kyg-Md-7ZA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="YmY-Wa-gQJ"/>
+                <constraint firstItem="kyg-Md-7ZA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Yv7-9H-9bl"/>
                 <constraint firstAttribute="trailing" secondItem="r92-oj-7Oy" secondAttribute="trailing" id="ZIV-pe-J7F"/>
                 <constraint firstAttribute="bottom" secondItem="r92-oj-7Oy" secondAttribute="bottom" id="asN-uz-9aD"/>
-                <constraint firstItem="Nbr-tk-OH6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mGY-eE-uPh"/>
+                <constraint firstAttribute="trailing" secondItem="kyg-Md-7ZA" secondAttribute="trailing" id="c35-4C-e5l"/>
                 <constraint firstItem="r92-oj-7Oy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="z8f-ej-fgT"/>
             </constraints>
             <size key="customSize" width="332" height="293"/>
             <connections>
                 <outlet property="heartButton" destination="sTz-FQ-2bb" id="oAb-RO-6PA"/>
-                <outlet property="imageView" destination="Nbr-tk-OH6" id="0OL-LS-dIG"/>
+                <outlet property="imageCollectionView" destination="kyg-Md-7ZA" id="waz-ff-3Mu"/>
                 <outlet property="priceLabel" destination="IcP-uR-Q5H" id="9zS-lk-TjP"/>
                 <outlet property="titleLabel" destination="QTn-M1-C5a" id="fn3-S1-4pN"/>
                 <outlet property="totalPriceLabel" destination="7rH-dr-4Uh" id="krw-f1-Sb8"/>
@@ -101,9 +101,8 @@
     </objects>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

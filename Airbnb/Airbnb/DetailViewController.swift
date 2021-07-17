@@ -98,8 +98,9 @@ class DetailViewController: UIViewController {
 }
 
 extension DetailViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
         5
     }
     
@@ -111,19 +112,10 @@ extension DetailViewController: UICollectionViewDataSource {
 }
 
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.width, height: view.width)
-    }
-}
-
-extension UIView {
-    static func loadFromNib<T>() -> T? {
-        let name = String(describing: self)
-        guard let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as? T else {
-            return nil
-        }
-        return view
     }
 }

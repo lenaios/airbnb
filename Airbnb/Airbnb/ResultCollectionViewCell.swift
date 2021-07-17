@@ -8,7 +8,7 @@
 import UIKit
 
 class ResultCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -25,8 +25,12 @@ class ResultCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView.layer.cornerRadius = 10
-        imageView.clipsToBounds = true
+        imageCollectionView.register(ImageCell.self,
+                                     forCellWithReuseIdentifier: ImageCell.identifier)
+        imageCollectionView.dataSource = self
+        imageCollectionView.delegate = self
+        imageCollectionView.layer.cornerRadius = 10
+        imageCollectionView.clipsToBounds = true
     }
     
     @IBAction func touchUpHeart(_ sender: Any) {
@@ -36,5 +40,32 @@ class ResultCollectionViewCell: UICollectionViewCell {
             heartButton.setImage(unheart, for: .normal)
         }
         isHeart = !isHeart
+    }
+}
+
+extension ResultCollectionViewCell: UICollectionViewDataSource {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ImageCell.identifier,
+            for: indexPath)
+        return cell
+    }
+}
+
+extension ResultCollectionViewCell: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: imageCollectionView.frame.width,
+                      height: imageCollectionView.frame.height)
     }
 }
