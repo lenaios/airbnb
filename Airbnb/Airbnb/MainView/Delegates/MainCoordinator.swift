@@ -27,12 +27,28 @@ class MainCoordinator: Coordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        childCoordinators = [ResultCoordinator(navigationController: navigationController)]
+        childCoordinators = [CalendarViewCoordinator(navigationController: navigationController)]
     }
 
     func show() {
         let vc = CalendarViewController.instantiate()
-//        vc.coordinator = childCoordinators.first
+        vc.coordinator = childCoordinators.first
+        navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+class CalendarViewCoordinator: Coordinator {
+    var childCoordinators: [Coordinator]
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        childCoordinators = [ResultCoordinator(navigationController: navigationController)]
+    }
+    
+    func show() {
+        let vc = ResultViewController.instantiate()
+        vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
 }

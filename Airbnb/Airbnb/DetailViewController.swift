@@ -11,8 +11,9 @@ class DetailViewController: UIViewController {
 
     private let scrollView = UIScrollView()
     
-    private let purchaseView: PurchaseView? = PurchaseView.loadFromNib()
-    private let navigationBar: NavigationBar? = NavigationBar.loadFromNib()
+    private let navigationBar: NavigationBar = NavigationBar.loadFromNib()
+    private let descriptionView: DescriptionView = DescriptionView.loadFromNib()
+    private let purchaseView: PurchaseView = PurchaseView.loadFromNib()
     
     private let imageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -27,8 +28,6 @@ class DetailViewController: UIViewController {
         collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
-    
-    private let descriptionView: DescriptionView? = DescriptionView.loadFromNib()
 
     var coordinator: Coordinator?
     
@@ -53,7 +52,7 @@ class DetailViewController: UIViewController {
         addDescriptionView()
         addNavigationBar()
         
-        scrollView.contentSize = CGSize(width: view.width, height: view.width + descriptionView!.frame.height)
+        scrollView.contentSize = CGSize(width: view.width, height: view.width + descriptionView.frame.height)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,18 +61,12 @@ class DetailViewController: UIViewController {
     }
     
     private func addNavigationBar() {
-        guard let navigationBar = navigationBar else {
-            return
-        }
         navigationBar.coordinator = coordinator
         navigationBar.frame = CGRect(x: 0, y: 34, width: view.frame.width, height: 100)
         view.addSubview(navigationBar)
     }
     
     private func addDescriptionView() {
-        guard let descriptionView = descriptionView else {
-            return
-        }
         descriptionView.frame = CGRect(x: 0,
                                        y: imageCollectionView.frame.height,
                                        width: view.width,
@@ -82,9 +75,6 @@ class DetailViewController: UIViewController {
     }
     
     private func addPurchaseView() {
-        guard let purchaseView = purchaseView else {
-            return
-        }
         purchaseView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(purchaseView)
         NSLayoutConstraint.activate([
@@ -93,7 +83,6 @@ class DetailViewController: UIViewController {
             purchaseView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34),
             purchaseView.heightAnchor.constraint(equalToConstant: 74)
         ])
-        
     }
 }
 
@@ -104,8 +93,9 @@ extension DetailViewController: UICollectionViewDataSource {
         5
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath)
         return cell
     }

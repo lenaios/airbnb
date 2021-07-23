@@ -11,11 +11,15 @@ class CalendarViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private let menuBar: BottomMenuBar = BottomMenuBar.loadFromNib()
+    
     private let calendar = Calendar(identifier: .gregorian)
     private let today = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "날짜를 선택하세요."
         
         collectionView.register(
             CalendarHeaderView.self,
@@ -26,6 +30,25 @@ class CalendarViewController: UIViewController, Storyboarded {
             CalendarDateCollectionViewCell.self,
             forCellWithReuseIdentifier: CalendarDateCollectionViewCell.identifier
         )
+        
+        addMenuBar()
+    }
+    
+    var coordinator: Coordinator?
+}
+
+private extension CalendarViewController {
+    func addMenuBar() {
+        menuBar.translatesAutoresizingMaskIntoConstraints = false
+        menuBar.coordinator = coordinator
+        
+        view.addSubview(menuBar)
+        NSLayoutConstraint.activate([
+            menuBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            menuBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            menuBar.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34),
+            menuBar.heightAnchor.constraint(equalToConstant: 74)
+        ])
     }
 }
 

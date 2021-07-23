@@ -18,10 +18,10 @@ extension UIView {
 }
 
 extension UIView {
-    static func loadFromNib<T>() -> T? {
+    static func loadFromNib<T>() -> T {
         let name = String(describing: self)
         guard let view = Bundle.main.loadNibNamed(name, owner: nil, options: nil)?.first as? T else {
-            return nil
+            fatalError("load fail nib file")
         }
         return view
     }
