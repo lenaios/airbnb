@@ -8,6 +8,10 @@
 import UIKit
 
 extension UIView {
+    static let identifier = String(describing: self)
+}
+
+extension UIView {
     var width: CGFloat {
         return self.frame.width
     }

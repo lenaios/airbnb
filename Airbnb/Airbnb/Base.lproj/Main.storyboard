@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9y5-fh-Uf3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dk2-qq-6S9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -44,6 +44,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="758" y="94"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="D1b-eI-OYS">
+            <objects>
+                <viewController storyboardIdentifier="CalendarViewController" id="dk2-qq-6S9" customClass="CalendarViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LHf-UT-EGU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vSt-Kp-mrW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="USv-YB-cJe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="dk2-qq-6S9" id="5hI-6a-Bss"/>
+                                    <outlet property="delegate" destination="dk2-qq-6S9" id="t4s-wB-mB4"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PPJ-vM-Uk0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vSt-Kp-mrW" firstAttribute="top" secondItem="PPJ-vM-Uk0" secondAttribute="top" id="3HK-b7-xMb"/>
+                            <constraint firstItem="vSt-Kp-mrW" firstAttribute="leading" secondItem="PPJ-vM-Uk0" secondAttribute="leading" id="3IO-0u-gzA"/>
+                            <constraint firstItem="PPJ-vM-Uk0" firstAttribute="trailing" secondItem="vSt-Kp-mrW" secondAttribute="trailing" id="UoT-Qb-BRl"/>
+                            <constraint firstItem="PPJ-vM-Uk0" firstAttribute="bottom" secondItem="vSt-Kp-mrW" secondAttribute="bottom" id="kIB-MF-xcb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="vSt-Kp-mrW" id="ZGN-GA-rz4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A40-EZ-hCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ISE-jd-feU">

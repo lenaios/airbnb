@@ -28,7 +28,3 @@ class MainHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-extension UIView {
-    static let identifier = String(describing: self)
-}

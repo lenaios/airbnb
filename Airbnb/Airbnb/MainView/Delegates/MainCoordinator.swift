@@ -31,8 +31,8 @@ class MainCoordinator: Coordinator {
     }
 
     func show() {
-        let vc = ResultViewController.instantiate()
-        vc.coordinator = childCoordinators.first
+        let vc = CalendarViewController.instantiate()
+//        vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
 }
