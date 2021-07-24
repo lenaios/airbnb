@@ -18,8 +18,9 @@ class NearbyDestinationDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: NearbyDestinationCell.cellSize + 70,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return CGSize(width: NearbyDestinationCell.cellSize + 100,
                       height: NearbyDestinationCell.cellSize)
     }
     
@@ -31,14 +32,46 @@ class NearbyDestinationDelegate: NSObject, UICollectionViewDelegateFlowLayout {
 }
 
 class NearbyDestinationDataSource: NSObject, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return 8
+    var data: [Region] = []
+    
+    override init() {
+        super.init()
+        getData()
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearbyDestinationCell.identifier, for: indexPath)
+    private func getData() {
+        guard
+            let path = Bundle.main.path(forResource: "mock", ofType: "json"),
+            let jsonString = try? String(contentsOfFile: path),
+            let data = jsonString.data(using: .utf8) else {
+            return
+        }
+        do {
+            self.data = try JSONDecoder().decode([Region].self, from: data)
+        } catch {
+            
+        }
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
+        return data.count
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearbyDestinationCell.identifier, for: indexPath) as! NearbyDestinationCell
+        cell.setup(data: data[indexPath.item])
         return cell
     }
 }
+
+struct Region: Decodable {
+    let region: String
+    let description: String
+}
+

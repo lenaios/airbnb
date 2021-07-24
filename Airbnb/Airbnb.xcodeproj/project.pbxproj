@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D03DDBDB26ABC8EF0096F756 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBDA26ABC8EF0096F756 /* mock.json */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
 		D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */; };
 		D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */; };
@@ -17,12 +18,10 @@
 		D07574F6269DA3E70083980B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D07574F5269DA3E70083980B /* Assets.xcassets */; };
 		D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D07574F7269DA3E70083980B /* LaunchScreen.storyboard */; };
 		D0757501269DAB490083980B /* MainHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757500269DAB490083980B /* MainHeaderView.swift */; };
-		D0757503269DB1A50083980B /* jeju.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0757502269DB1A50083980B /* jeju.jpg */; };
 		D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */; };
 		D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757506269DD33F0083980B /* NearbyDestinationCell.swift */; };
 		D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757508269DD8A70083980B /* MainCollectionViewCell.swift */; };
 		D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750A269DD8B90083980B /* TravelStyleCell.swift */; };
-		D075750E269DDC4A0083980B /* wanju.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D075750D269DDC4A0083980B /* wanju.jpg */; };
 		D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */; };
 		D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */; };
 		D0757515269E0E590083980B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757514269E0E590083980B /* ResultViewController.swift */; };
@@ -55,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D03DDBDA26ABC8EF0096F756 /* mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBar.xib; sourceTree = "<group>"; };
 		D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBar.swift; sourceTree = "<group>"; };
@@ -67,12 +67,10 @@
 		D07574F8269DA3E70083980B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D07574FA269DA3E70083980B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0757500269DAB490083980B /* MainHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderView.swift; sourceTree = "<group>"; };
-		D0757502269DB1A50083980B /* jeju.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jeju.jpg; sourceTree = "<group>"; };
 		D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		D0757506269DD33F0083980B /* NearbyDestinationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationCell.swift; sourceTree = "<group>"; };
 		D0757508269DD8A70083980B /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		D075750A269DD8B90083980B /* TravelStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleCell.swift; sourceTree = "<group>"; };
-		D075750D269DDC4A0083980B /* wanju.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wanju.jpg; sourceTree = "<group>"; };
 		D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationDelegate.swift; sourceTree = "<group>"; };
 		D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleDelegate.swift; sourceTree = "<group>"; };
 		D0757514269E0E590083980B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +150,6 @@
 				D075751C269E21F30083980B /* DetailViewController.swift */,
 				D0EC356A26A1EFEC00529357 /* MainView */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
-				D0757502269DB1A50083980B /* jeju.jpg */,
-				D075750D269DDC4A0083980B /* wanju.jpg */,
 				D07574FA269DA3E70083980B /* Info.plist */,
 				D0EC356926A1EF9300529357 /* DetailView */,
 				D05070F526A986B400B8F054 /* Calendar */,
@@ -187,6 +183,7 @@
 				D07574EC269DA3E60083980B /* AppDelegate.swift */,
 				D07574EE269DA3E60083980B /* SceneDelegate.swift */,
 				D07574F5269DA3E70083980B /* Assets.xcassets */,
+				D03DDBDA26ABC8EF0096F756 /* mock.json */,
 				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
 				D075752E269F45450083980B /* Storyboarded.swift */,
 				D0757530269F52070083980B /* UIView+Extension.swift */,
@@ -313,12 +310,11 @@
 			files = (
 				D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */,
 				D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */,
-				D0757503269DB1A50083980B /* jeju.jpg in Resources */,
 				D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */,
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
 				D0EC356826A1E91000529357 /* DescriptionView.xib in Resources */,
 				D07574F6269DA3E70083980B /* Assets.xcassets in Resources */,
-				D075750E269DDC4A0083980B /* wanju.jpg in Resources */,
+				D03DDBDB26ABC8EF0096F756 /* mock.json in Resources */,
 				D07574F4269DA3E60083980B /* Main.storyboard in Resources */,
 				D0757536269FE0C50083980B /* PurchaseView.xib in Resources */,
 			);
@@ -525,6 +521,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R7GCRW94KH;
 				INFOPLIST_FILE = Airbnb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,6 +540,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R7GCRW94KH;
 				INFOPLIST_FILE = Airbnb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

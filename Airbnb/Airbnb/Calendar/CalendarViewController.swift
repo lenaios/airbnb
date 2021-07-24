@@ -34,6 +34,11 @@ class CalendarViewController: UIViewController, Storyboarded {
         addMenuBar()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     var coordinator: Coordinator?
 }
 

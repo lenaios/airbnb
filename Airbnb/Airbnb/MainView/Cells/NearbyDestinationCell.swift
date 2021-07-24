@@ -11,23 +11,36 @@ class NearbyDestinationCell: UICollectionViewCell {
     static let cellSize: CGFloat = 70
     
     private let imageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "jeju.jpg"))
+        let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
+    private let textLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 2
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(imageView)
+        contentView.addSubview(textLabel)
     }
     
     override func layoutSubviews() {
         imageView.frame = CGRect(x: 0, y: 0, width: Self.cellSize, height: Self.cellSize)
+        textLabel.frame = CGRect(x: imageView.frame.width + 10, y: 0, width: 90, height: Self.cellSize)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setup(data: Region) {
+        imageView.image = UIImage(named: data.region)
+        textLabel.text = data.description
     }
 }

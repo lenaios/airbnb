@@ -26,6 +26,11 @@ class ViewController: UIViewController {
         setupCollectionView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     private func setupCollectionView() {
         collectionView.register(MainHeaderView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -57,7 +62,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         return .zero
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(
+        in collectionView: UICollectionView) -> Int {
         return 2
     }
     
