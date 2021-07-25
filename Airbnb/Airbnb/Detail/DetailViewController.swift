@@ -31,9 +31,9 @@ class DetailViewController: UIViewController {
 
     var coordinator: Coordinator?
     
-    static func instantiate() -> DetailViewController {
-        return DetailViewController()
-    }
+//    static func instantiate() -> DetailViewController {
+//        return DetailViewController()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

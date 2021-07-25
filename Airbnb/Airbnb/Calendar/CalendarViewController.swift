@@ -17,25 +17,16 @@ final class CalendarViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         
         title = "날짜를 선택하세요."
-        collectionView.register(
-            CalendarHeaderView.self,
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: CalendarHeaderView.identifier
-        )
-        collectionView.register(
-            CalendarDateCollectionViewCell.self,
-            forCellWithReuseIdentifier: CalendarDateCollectionViewCell.identifier
-        )
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "지우기", style: .plain, target: self, action: #selector(reset))
         
-        collectionView.allowsMultipleSelection = true
+        setupCollectionView()
+        addMenuBar()
+        
         viewModel.selectHandler = { indexPaths in
             let selectedItems = self.collectionView.indexPathsForSelectedItems
-            selectedItems?.forEach({ self.collectionView.deselectItem(at: $0, animated: false)})
-            indexPaths.forEach {
-                self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredHorizontally)
-            }
+            selectedItems?.forEach { self.collectionView.deselectItem(at: $0, animated: false)}
+            indexPaths.forEach { self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredHorizontally) }
         }
-        addMenuBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +39,28 @@ final class CalendarViewController: UIViewController, Storyboarded {
 }
 
 private extension CalendarViewController {
+    @objc func reset() {
+        collectionView.indexPathsForSelectedItems?.forEach {
+            collectionView.deselectItem(at: $0, animated: false)
+            
+        }
+        viewModel.deselect()
+    }
+    
+    func setupCollectionView() {
+        collectionView.register(
+            CalendarHeaderView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: CalendarHeaderView.identifier
+        )
+        collectionView.register(
+            CalendarDateCollectionViewCell.self,
+            forCellWithReuseIdentifier: CalendarDateCollectionViewCell.identifier
+        )
+        
+        collectionView.allowsMultipleSelection = true
+    }
+    
     func addMenuBar() {
         menuBar.translatesAutoresizingMaskIntoConstraints = false
         menuBar.coordinator = coordinator
@@ -137,6 +150,6 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         didDeselectItemAt indexPath: IndexPath) {
-        viewModel.deselect(at: indexPath)
+        //viewModel.deselect(at: indexPath)
     }
 }

@@ -26,3 +26,9 @@ extension UIView {
         return view
     }
 }
+
+extension UIViewController {
+    static func instantiate<T>() -> T {
+        return self.init() as! T
+    }
+}

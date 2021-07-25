@@ -11,6 +11,8 @@ class MainHeaderView: UICollectionReusableView {
     
     private let padding: CGFloat = 20
     
+    var coordinator: Coordinator?
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "home"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,10 +42,15 @@ class MainHeaderView: UICollectionReusableView {
         imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         searchButton.frame = CGRect(x: padding, y: 44, width: width - (padding * 2), height: 44)
+        searchButton.addTarget(self, action: #selector(touchUpSearch), for: .touchUpInside)
         addSubview(searchButton)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func touchUpSearch() {
+        coordinator?.show()
     }
 }

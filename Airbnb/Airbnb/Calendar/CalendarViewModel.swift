@@ -8,60 +8,60 @@
 import Foundation
 
 class CalendarViewModel {
+    enum SelectMode {
+        case none
+        case one
+        case two
+    }
     
     var selectHandler: (([IndexPath]) -> Void)?
     
     var calendar = Calendar(identifier: .gregorian)
     
+    private var selectMode: SelectMode = .none
+    
     private let today = Date()
     
-    var start: IndexPath? {
-        willSet {
-            guard let value = newValue else {
-                startDate = nil
-                return
-            }
-            startDate = date(at: value)
-        }
-    }
-    var end: IndexPath? {
-        willSet {
-            guard let value = newValue else {
-                endDate = nil
-                return
-            }
-            endDate = date(at: value)
-        }
-    }
+    private var start: IndexPath?
+    private var end: IndexPath?
     
-    var startDate: Date?
-    
-    var endDate: Date?
+    private var startDate: Date?
+    private var endDate: Date?
     
     func select(at indexPath: IndexPath) {
         let date = date(at: indexPath)
-        if start == nil && end == nil {
+        switch selectMode {
+        case .none:
+            startDate = date
             start = indexPath
-        } else if let _  = startDate, startDate! < date {
-            end = indexPath
-        } else {
-            end = start
+            selectMode = .one
+        case .one:
+            if let _ = startDate, startDate! < date {
+                endDate = date
+                end = indexPath
+            } else {
+                end = start
+                endDate = startDate
+                start = indexPath
+                startDate = date
+            }
+            selectMode = .two
+        case .two:
+            startDate = date
+            endDate = nil
             start = indexPath
+            end = nil
+            selectMode = .one
+            selectHandler?([start!])
         }
-        guard let start = start, let end = end else {
-            return
-        }
-        selectHandler?([start, end])
     }
     
-    func deselect(at indexPath: IndexPath) {
-        let date = date(at: indexPath)
-        if startDate == date {
-            start = nil
-        }
-        if endDate == date {
-            end = nil
-        }
+    func deselect() {
+        start = nil
+        end = nil
+        startDate = nil
+        endDate = nil
+        selectMode = .none
     }
 }
 

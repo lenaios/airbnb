@@ -31,7 +31,7 @@ class MainCoordinator: Coordinator {
     }
 
     func show() {
-        let vc = CalendarViewController.instantiate()
+        let vc: SearchViewController = SearchViewController.instantiate()
         vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
@@ -47,7 +47,7 @@ class CalendarViewCoordinator: Coordinator {
     }
     
     func show() {
-        let vc = ResultViewController.instantiate()
+        let vc = CalendarViewController.instantiate()
         vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
@@ -63,13 +63,29 @@ class ResultCoordinator: Coordinator {
     }
     
     func show() {
-        let vc = DetailViewController.instantiate()
+        let vc: ResultViewController = ResultViewController.instantiate()
         vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
 }
 
 class DetailCoordinator: Coordinator {
+    var childCoordinators: [Coordinator]
+    var navigationController: UINavigationController
+    
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+        childCoordinators = [FakeCoordinator(navigationController: navigationController)]
+    }
+    
+    func show() {
+        let vc: DetailViewController = DetailViewController.instantiate()
+        vc.coordinator = childCoordinators.first
+        navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+class FakeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     

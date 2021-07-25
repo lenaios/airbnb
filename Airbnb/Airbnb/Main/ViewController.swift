@@ -47,7 +47,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MainHeaderView.identifier, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MainHeaderView.identifier, for: indexPath) as! MainHeaderView
+        header.coordinator = coordinator
         return header
     }
     

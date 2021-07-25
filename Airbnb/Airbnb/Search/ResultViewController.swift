@@ -36,9 +36,9 @@ class ResultViewController: UIViewController {
         return button
     }()
     
-    static func instantiate() -> ResultViewController {
-        return ResultViewController()
-    }
+//    static func instantiate() -> ResultViewController {
+//        return ResultViewController()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,7 +96,9 @@ extension ResultViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ResultCollectionViewCell.identifier,
+            for: indexPath)
         return cell
     }
 }
