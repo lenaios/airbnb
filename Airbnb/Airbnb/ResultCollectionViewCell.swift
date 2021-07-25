@@ -13,6 +13,7 @@ class ResultCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var pageControl: UIPageControl!
     
     private let heart = UIImage(systemName: "heart")
     private let unheart = UIImage(systemName: "heart.fill")
@@ -57,6 +58,14 @@ extension ResultCollectionViewCell: UICollectionViewDataSource {
             withReuseIdentifier: ImageCell.identifier,
             for: indexPath)
         return cell
+    }
+    
+    func scrollViewWillEndDragging(
+        _ scrollView: UIScrollView,
+        withVelocity velocity: CGPoint,
+        targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / self.frame.width)
+        self.pageControl.currentPage = page
     }
 }
 

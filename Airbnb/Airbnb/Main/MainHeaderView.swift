@@ -12,7 +12,7 @@ class MainHeaderView: UICollectionReusableView {
     private let padding: CGFloat = 20
     
     private let imageView: UIImageView = {
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "jeju.jpg"))
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "home"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -22,9 +22,12 @@ class MainHeaderView: UICollectionReusableView {
         let button = UIButton()
         button.setTitle("어디로 여행가세요?", for: .normal)
         button.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        button.backgroundColor = .systemGray
+        button.tintColor = .systemPink
+        button.backgroundColor = .white
+        button.setTitleColor(.label, for: .normal)
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
+        button.titleEdgeInsets = .init(top: 0, left: 10, bottom: 0, right: 0)
         return button
     }()
     

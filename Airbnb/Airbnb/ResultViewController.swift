@@ -60,7 +60,7 @@ class ResultViewController: UIViewController {
         mapButton.center = view.center
         mapButton.frame = CGRect(x: view.center.x - 50,
                                  y: view.frame.height - 104,
-                                 width: 100,
+                                 width: 80,
                                  height: 34)
     }
 }

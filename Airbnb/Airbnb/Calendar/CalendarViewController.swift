@@ -32,7 +32,7 @@ final class CalendarViewController: UIViewController, Storyboarded {
             let selectedItems = self.collectionView.indexPathsForSelectedItems
             selectedItems?.forEach({ self.collectionView.deselectItem(at: $0, animated: false)})
             indexPaths.forEach {
-                self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredVertically)
+                self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredHorizontally)
             }
         }
         addMenuBar()
@@ -134,7 +134,9 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         viewModel.select(at: indexPath)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didDeselectItemAt indexPath: IndexPath) {
         viewModel.deselect(at: indexPath)
     }
 }

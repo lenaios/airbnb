@@ -165,6 +165,7 @@
 				D0757506269DD33F0083980B /* NearbyDestinationCell.swift */,
 				D075750A269DD8B90083980B /* TravelStyleCell.swift */,
 				D0757508269DD8A70083980B /* MainCollectionViewCell.swift */,
+				D0757528269EE5270083980B /* ImageCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -175,6 +176,7 @@
 				D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */,
 				D0757516269E12850083980B /* MainCoordinator.swift */,
 				D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */,
+				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -225,8 +227,6 @@
 				D075750C269DD8CB0083980B /* Cells */,
 				D07574F0269DA3E60083980B /* ViewController.swift */,
 				D0757500269DAB490083980B /* MainHeaderView.swift */,
-				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
-				D0757528269EE5270083980B /* ImageCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";

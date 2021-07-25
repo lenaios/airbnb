@@ -8,7 +8,7 @@
 import UIKit
 
 class NearbyDestinationCell: UICollectionViewCell {
-    static let cellSize: CGFloat = 70
+    static let height: CGFloat = 70
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -31,8 +31,8 @@ class NearbyDestinationCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        imageView.frame = CGRect(x: 0, y: 0, width: Self.cellSize, height: Self.cellSize)
-        textLabel.frame = CGRect(x: imageView.frame.width + 10, y: 0, width: 90, height: Self.cellSize)
+        imageView.frame = CGRect(x: 0, y: 0, width: Self.height, height: Self.height)
+        textLabel.frame = CGRect(x: imageView.frame.width + 10, y: 0, width: 90, height: Self.height)
     }
     
     required init?(coder: NSCoder) {

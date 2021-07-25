@@ -70,7 +70,7 @@
                             <action selector="touchUpHeart:" destination="gTV-IL-0wX" eventType="touchUpInside" id="bra-wf-aDg"/>
                         </connections>
                     </button>
-                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y7U-GW-oqG">
+                    <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="Y7U-GW-oqG">
                         <rect key="frame" x="87" y="163.5" width="158" height="27.5"/>
                     </pageControl>
                 </subviews>
@@ -92,6 +92,7 @@
             <connections>
                 <outlet property="heartButton" destination="sTz-FQ-2bb" id="oAb-RO-6PA"/>
                 <outlet property="imageCollectionView" destination="kyg-Md-7ZA" id="waz-ff-3Mu"/>
+                <outlet property="pageControl" destination="Y7U-GW-oqG" id="kz3-bd-YsI"/>
                 <outlet property="priceLabel" destination="IcP-uR-Q5H" id="9zS-lk-TjP"/>
                 <outlet property="titleLabel" destination="QTn-M1-C5a" id="fn3-S1-4pN"/>
                 <outlet property="totalPriceLabel" destination="7rH-dr-4Uh" id="krw-f1-Sb8"/>
