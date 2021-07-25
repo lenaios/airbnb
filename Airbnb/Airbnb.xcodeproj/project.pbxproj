@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D03DDBDB26ABC8EF0096F756 /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBDA26ABC8EF0096F756 /* mock.json */; };
+		D03DDBDD26AC33EE0096F756 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
 		D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */; };
 		D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		D03DDBDA26ABC8EF0096F756 /* mock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
+		D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBar.xib; sourceTree = "<group>"; };
 		D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBar.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				D0EC357D26A31F1500529357 /* CalendarViewController.swift */,
 				D0EC358326A3206100529357 /* CalendarDateCollectionViewCell.swift */,
 				D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */,
+				D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -147,11 +150,10 @@
 				D0757514269E0E590083980B /* ResultViewController.swift */,
 				D0757518269E13720083980B /* ResultCollectionViewCell.swift */,
 				D0757519269E13720083980B /* ResultCollectionViewCell.xib */,
-				D075751C269E21F30083980B /* DetailViewController.swift */,
-				D0EC356A26A1EFEC00529357 /* MainView */,
+				D0EC356A26A1EFEC00529357 /* Main */,
 				D07574F2269DA3E60083980B /* Main.storyboard */,
 				D07574FA269DA3E70083980B /* Info.plist */,
-				D0EC356926A1EF9300529357 /* DetailView */,
+				D0EC356926A1EF9300529357 /* Detail */,
 				D05070F526A986B400B8F054 /* Calendar */,
 			);
 			path = Airbnb;
@@ -202,9 +204,10 @@
 			path = AirbnbTests;
 			sourceTree = "<group>";
 		};
-		D0EC356926A1EF9300529357 /* DetailView */ = {
+		D0EC356926A1EF9300529357 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D075751C269E21F30083980B /* DetailViewController.swift */,
 				D0757524269EBDDD0083980B /* NavigationBar.xib */,
 				D0757526269EBF7B0083980B /* NavigationBar.swift */,
 				D0757533269FD7440083980B /* DescriptionView.swift */,
@@ -212,10 +215,10 @@
 				D0757535269FE0C50083980B /* PurchaseView.xib */,
 				D0757537269FE0CC0083980B /* PurchaseView.swift */,
 			);
-			path = DetailView;
+			path = Detail;
 			sourceTree = "<group>";
 		};
-		D0EC356A26A1EFEC00529357 /* MainView */ = {
+		D0EC356A26A1EFEC00529357 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				D0757511269DDE650083980B /* Delegates */,
@@ -225,7 +228,7 @@
 				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
 				D0757528269EE5270083980B /* ImageCell.swift */,
 			);
-			path = MainView;
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +349,7 @@
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
 				D0757534269FD7440083980B /* DescriptionView.swift in Sources */,
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
+				D03DDBDD26AC33EE0096F756 /* CalendarViewModel.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
 				D0757529269EE5270083980B /* ImageCell.swift in Sources */,
 				D0EC357E26A31F1500529357 /* CalendarViewController.swift in Sources */,

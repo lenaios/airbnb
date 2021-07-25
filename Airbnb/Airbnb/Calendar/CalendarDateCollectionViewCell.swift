@@ -9,6 +9,12 @@ import UIKit
 
 class CalendarDateCollectionViewCell: UICollectionViewCell {
     
+    override var isSelected: Bool {
+        didSet {
+            dateLabel.backgroundColor = isSelected ? .gray : .yellow
+        }
+    }
+    
     let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

@@ -10,7 +10,8 @@ import UIKit
 class ResultViewController: UIViewController {
     
     var coordinator: Coordinator?
-    let padding: CGFloat = 15
+    
+    private let padding: CGFloat = 15
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -23,6 +24,18 @@ class ResultViewController: UIViewController {
         return collectionView
     }()
     
+    private let mapButton: UIButton = {
+        let button = UIButton()
+        button.titleEdgeInsets = .init(top: 0, left: 10, bottom: 0, right: 0)
+        button.setImage(UIImage(systemName: "map"), for: .normal)
+        button.setTitle("지도", for: .normal)
+        button.backgroundColor = .label
+        button.tintColor = .white
+        button.layer.cornerRadius = 15
+        button.clipsToBounds = true
+        return button
+    }()
+    
     static func instantiate() -> ResultViewController {
         return ResultViewController()
     }
@@ -33,6 +46,7 @@ class ResultViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
+        view.addSubview(mapButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +57,11 @@ class ResultViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+        mapButton.center = view.center
+        mapButton.frame = CGRect(x: view.center.x - 50,
+                                 y: view.frame.height - 104,
+                                 width: 100,
+                                 height: 34)
     }
 }
 
@@ -66,13 +85,17 @@ extension ResultViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension ResultViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        numberOfItemsInSection section: Int
+    ) -> Int {
         4
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultCollectionViewCell.identifier, for: indexPath)
         return cell
     }

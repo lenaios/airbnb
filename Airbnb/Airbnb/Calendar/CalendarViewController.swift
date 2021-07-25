@@ -7,20 +7,16 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, Storyboarded {
+final class CalendarViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let menuBar: BottomMenuBar = BottomMenuBar.loadFromNib()
     
-    private let calendar = Calendar(identifier: .gregorian)
-    private let today = Date()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "날짜를 선택하세요."
-        
+        title = "날짜를 선택하세요."
         collectionView.register(
             CalendarHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
@@ -31,6 +27,14 @@ class CalendarViewController: UIViewController, Storyboarded {
             forCellWithReuseIdentifier: CalendarDateCollectionViewCell.identifier
         )
         
+        collectionView.allowsMultipleSelection = true
+        viewModel.selectHandler = { indexPaths in
+            let selectedItems = self.collectionView.indexPathsForSelectedItems
+            selectedItems?.forEach({ self.collectionView.deselectItem(at: $0, animated: false)})
+            indexPaths.forEach {
+                self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredVertically)
+            }
+        }
         addMenuBar()
     }
     
@@ -40,6 +44,7 @@ class CalendarViewController: UIViewController, Storyboarded {
     }
     
     var coordinator: Coordinator?
+    var viewModel: CalendarViewModel = CalendarViewModel()
 }
 
 private extension CalendarViewController {
@@ -57,37 +62,6 @@ private extension CalendarViewController {
     }
 }
 
-private extension CalendarViewController {
-    func dayOffset(year: Int, month: Int) -> Int {
-        let firstOfMonthDateComponents = DateComponents(calendar: calendar, year: year, month: month, day: 1)
-        let startOfMonth = calendar.date(from: firstOfMonthDateComponents)!
-        let dayOffset = calendar.component(.weekday, from: startOfMonth) - 1
-        return dayOffset
-    }
-    
-    func year(at indexPath: IndexPath) -> Int {
-        let shiftedDate = calendar.date(byAdding: .month, value: indexPath.section, to: today)!
-        let year = calendar.component(.year, from: shiftedDate)
-        return year
-    }
-    
-    func month(at indexPath: IndexPath) -> Int {
-        let shiftedDate = calendar.date(byAdding: .month, value: indexPath.section, to: today)!
-        let month = calendar.component(.month, from: shiftedDate)
-        return month
-    }
-    
-    func day(at indexPath: IndexPath) -> Int? {
-        let year = self.year(at: indexPath)
-        let month = self.month(at: indexPath)
-        let day = indexPath.item - dayOffset(year: year, month: month) + 1
-        guard day >= 1 else {
-            return nil
-        }
-        return day
-    }
-}
-
 extension CalendarViewController: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
@@ -96,8 +70,8 @@ extension CalendarViewController: UICollectionViewDataSource {
     -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CalendarHeaderView.identifier, for: indexPath) as! CalendarHeaderView
-            let year = year(at: indexPath)
-            let month = month(at: indexPath)
+            let year = viewModel.year(at: indexPath)
+            let month = viewModel.month(at: indexPath)
             header.yearMonthLabel.text = "\(year)년 \(month)월"
             return header
         }
@@ -113,12 +87,12 @@ extension CalendarViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
         let indexPath = IndexPath(item: 0, section: section)
-        let year = year(at: indexPath)
-        let month = month(at: indexPath)
+        let year = viewModel.year(at: indexPath)
+        let month = viewModel.month(at: indexPath)
         let dateComponents = DateComponents(year: year, month: month)
-        let date = calendar.date(from: dateComponents)!
-        let daysInMonth = calendar.range(of: .day, in: .month, for: date)!.count
-        let dayOffset = self.dayOffset(year: year, month: month)
+        let date = viewModel.calendar.date(from: dateComponents)!
+        let daysInMonth = viewModel.calendar.range(of: .day, in: .month, for: date)!.count
+        let dayOffset = viewModel.dayOffset(year: year, month: month)
         return daysInMonth + dayOffset
     }
     
@@ -127,7 +101,7 @@ extension CalendarViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarDateCollectionViewCell.identifier, for: indexPath) as! CalendarDateCollectionViewCell
-        let day = day(at: indexPath)
+        let day = viewModel.day(at: indexPath)
         cell.dateLabel.text = day == nil ? nil : "\(day!)"
         return cell
     }
@@ -152,5 +126,15 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         totalSpace += flowLayout.sectionInset.left + flowLayout.sectionInset.right
         let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(7))
         return CGSize(width: size, height: 30)
+    }
+    
+    func collectionView(
+        _ collectionView: UICollectionView,
+        didSelectItemAt indexPath: IndexPath) {
+        viewModel.select(at: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        viewModel.deselect(at: indexPath)
     }
 }
