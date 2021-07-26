@@ -30,10 +30,10 @@
 		D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750A269DD8B90083980B /* TravelStyleCell.swift */; };
 		D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */; };
 		D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */; };
-		D0757515269E0E590083980B /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757514269E0E590083980B /* ResultViewController.swift */; };
+		D0757515269E0E590083980B /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757514269E0E590083980B /* SearchResultsViewController.swift */; };
 		D0757517269E12850083980B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757516269E12850083980B /* MainCoordinator.swift */; };
-		D075751A269E13720083980B /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757518269E13720083980B /* ResultCollectionViewCell.swift */; };
-		D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* ResultCollectionViewCell.xib */; };
+		D075751A269E13720083980B /* SearchResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757518269E13720083980B /* SearchResultsCollectionViewCell.swift */; };
+		D075751B269E13720083980B /* SearchResultsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* SearchResultsCollectionViewCell.xib */; };
 		D075751D269E21F30083980B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075751C269E21F30083980B /* DetailViewController.swift */; };
 		D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757524269EBDDD0083980B /* NavigationBar.xib */; };
 		D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757526269EBF7B0083980B /* NavigationBar.swift */; };
@@ -85,10 +85,10 @@
 		D075750A269DD8B90083980B /* TravelStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleCell.swift; sourceTree = "<group>"; };
 		D075750F269DDCA10083980B /* NearbyDestinationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDestinationDelegate.swift; sourceTree = "<group>"; };
 		D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleDelegate.swift; sourceTree = "<group>"; };
-		D0757514269E0E590083980B /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		D0757514269E0E590083980B /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		D0757516269E12850083980B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		D0757518269E13720083980B /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
-		D0757519269E13720083980B /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
+		D0757518269E13720083980B /* SearchResultsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0757519269E13720083980B /* SearchResultsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D075751C269E21F30083980B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0757524269EBDDD0083980B /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		D0757526269EBF7B0083980B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -129,9 +129,9 @@
 			children = (
 				D03DDBDF26ADB83E0096F756 /* SearchViewController.swift */,
 				D03DDBE126ADBF0D0096F756 /* ResultsTableViewController.swift */,
-				D0757514269E0E590083980B /* ResultViewController.swift */,
-				D0757518269E13720083980B /* ResultCollectionViewCell.swift */,
-				D0757519269E13720083980B /* ResultCollectionViewCell.xib */,
+				D0757514269E0E590083980B /* SearchResultsViewController.swift */,
+				D0757518269E13720083980B /* SearchResultsCollectionViewCell.swift */,
+				D0757519269E13720083980B /* SearchResultsCollectionViewCell.xib */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			files = (
 				D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */,
 				D03DDBE626ADD7F00096F756 /* ReservationView.xib in Resources */,
-				D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */,
+				D075751B269E13720083980B /* SearchResultsCollectionViewCell.xib in Resources */,
 				D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */,
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
 				D0EC356826A1E91000529357 /* DescriptionView.xib in Resources */,
@@ -384,8 +384,8 @@
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,
-				D075751A269E13720083980B /* ResultCollectionViewCell.swift in Sources */,
-				D0757515269E0E590083980B /* ResultViewController.swift in Sources */,
+				D075751A269E13720083980B /* SearchResultsCollectionViewCell.swift in Sources */,
+				D0757515269E0E590083980B /* SearchResultsViewController.swift in Sources */,
 				D075752F269F45450083980B /* Storyboarded.swift in Sources */,
 				D0757531269F52070083980B /* UIView+Extension.swift in Sources */,
 				D0EC358426A3206100529357 /* CalendarDateCollectionViewCell.swift in Sources */,

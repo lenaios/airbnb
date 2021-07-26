@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ResultCollectionViewCell: UICollectionViewCell {
+class SearchResultsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -44,7 +44,7 @@ class ResultCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension ResultCollectionViewCell: UICollectionViewDataSource {
+extension SearchResultsCollectionViewCell: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
@@ -69,7 +69,7 @@ extension ResultCollectionViewCell: UICollectionViewDataSource {
     }
 }
 
-extension ResultCollectionViewCell: UICollectionViewDelegateFlowLayout {
+extension SearchResultsCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,

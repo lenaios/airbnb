@@ -7,18 +7,18 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
+class SearchResultsViewController: UIViewController {
     
     var coordinator: Coordinator?
     
-    private let padding: CGFloat = 15
+    private let padding: CGFloat = 25
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(ResultCollectionViewCell.nib(),
-                                forCellWithReuseIdentifier: ResultCollectionViewCell.identifier)
+        collectionView.register(SearchResultsCollectionViewCell.nib(),
+                                forCellWithReuseIdentifier: SearchResultsCollectionViewCell.identifier)
         collectionView.backgroundColor = .systemBackground
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
@@ -65,7 +65,7 @@ class ResultViewController: UIViewController {
     }
 }
 
-extension ResultViewController: UICollectionViewDelegateFlowLayout {
+extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -84,7 +84,7 @@ extension ResultViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension ResultViewController: UICollectionViewDataSource {
+extension SearchResultsViewController: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
@@ -97,7 +97,7 @@ extension ResultViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: ResultCollectionViewCell.identifier,
+            withReuseIdentifier: SearchResultsCollectionViewCell.identifier,
             for: indexPath)
         return cell
     }

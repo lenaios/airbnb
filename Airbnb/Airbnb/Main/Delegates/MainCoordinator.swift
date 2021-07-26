@@ -64,7 +64,7 @@ class ResultCoordinator: Coordinator {
     }
     
     func show() {
-        let vc: ResultViewController = ResultViewController.instantiate()
+        let vc: SearchResultsViewController = SearchResultsViewController.instantiate()
         vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
     }
