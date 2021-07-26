@@ -8,17 +8,17 @@
 import Foundation
 
 class CalendarViewModel {
-    enum SelectMode {
+    enum SelectedMode {
         case none
         case one
-        case two
+        case all
     }
     
     var selectHandler: (([IndexPath]) -> Void)?
     
     var calendar = Calendar(identifier: .gregorian)
     
-    private var selectMode: SelectMode = .none
+    private var selectedMode: SelectedMode = .none
     
     private let today = Date()
     
@@ -30,11 +30,11 @@ class CalendarViewModel {
     
     func select(at indexPath: IndexPath) {
         let date = date(at: indexPath)
-        switch selectMode {
+        switch selectedMode {
         case .none:
             startDate = date
             start = indexPath
-            selectMode = .one
+            selectedMode = .one
         case .one:
             if let _ = startDate, startDate! < date {
                 endDate = date
@@ -45,13 +45,13 @@ class CalendarViewModel {
                 start = indexPath
                 startDate = date
             }
-            selectMode = .two
-        case .two:
+            selectedMode = .all
+        case .all:
             startDate = date
             endDate = nil
             start = indexPath
             end = nil
-            selectMode = .one
+            selectedMode = .one
             selectHandler?([start!])
         }
     }
@@ -61,7 +61,7 @@ class CalendarViewModel {
         end = nil
         startDate = nil
         endDate = nil
-        selectMode = .none
+        selectedMode = .none
     }
 }
 

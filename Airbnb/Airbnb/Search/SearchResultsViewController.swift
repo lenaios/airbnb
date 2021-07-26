@@ -42,11 +42,13 @@ class SearchResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "숙소 찾기"
         view.backgroundColor = .systemBackground
         collectionView.delegate = self
         collectionView.dataSource = self
         view.addSubview(collectionView)
         view.addSubview(mapButton)
+        print(SearchConditionModel.shared.start, SearchConditionModel.shared.end)
     }
     
     override func viewWillAppear(_ animated: Bool) {

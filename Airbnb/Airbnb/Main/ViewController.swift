@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     lazy var coordinator: Coordinator = MainCoordinator(navigationController: navigationController!)
     
+    private let headerText = ["가까운 여행지 둘러보기", "어디에서나, 여행은 살아보는거야!"]
+    
     private lazy var delegates: [UICollectionViewDelegateFlowLayout]
         = [NearbyDestinationDelegate(coordinator: coordinator), TravelStyleDelegate()]
     
@@ -83,6 +85,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         cell.register(cells[indexPath.section])
         cell.setup(delegate: delegates[indexPath.section])
         cell.setup(dataSource: dataSources[indexPath.section])
+        cell.headerView.text = headerText[indexPath.item]
         return cell
     }
     

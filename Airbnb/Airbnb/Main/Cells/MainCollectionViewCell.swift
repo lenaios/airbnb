@@ -9,9 +9,8 @@ import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
     
-    private let headerView: UILabel = {
+    let headerView: UILabel = {
         let label = UILabel()
-        label.text = "가까운 여행지"
         return label
     }()
     

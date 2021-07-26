@@ -11,20 +11,48 @@ class TravelStyleDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: TravelStyleCell.cellSize,
-                      height: TravelStyleCell.cellSize)
+        return CGSize(width: 150,
+                      height: 180)
     }
 }
 
 class TravelStyleDataSource: NSObject, UICollectionViewDataSource {
+    var data: [TravelStyle] = []
+    
+    override init() {
+        super.init()
+        getData()
+    }
+    
+    private func getData() {
+        guard
+            let path = Bundle.main.path(forResource: "style", ofType: "json"),
+            let jsonString = try? String(contentsOfFile: path),
+            let data = jsonString.data(using: .utf8) else {
+            return
+        }
+        do {
+            self.data = try JSONDecoder().decode([TravelStyle].self, from: data)
+        } catch {
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return data.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelStyleCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelStyleCell.identifier, for: indexPath) as! TravelStyleCell
+        cell.setup(data: data[indexPath.item])
         return cell
     }
+}
+
+
+struct TravelStyle: Decodable {
+    let image: String
+    let description: String
 }

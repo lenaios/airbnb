@@ -20,13 +20,10 @@ final class CalendarViewController: UIViewController, Storyboarded {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "지우기", style: .plain, target: self, action: #selector(reset))
         
         setupCollectionView()
+        setupDateSelectHandler()
         addMenuBar()
-        
-        viewModel.selectHandler = { indexPaths in
-            let selectedItems = self.collectionView.indexPathsForSelectedItems
-            selectedItems?.forEach { self.collectionView.deselectItem(at: $0, animated: false)}
-            indexPaths.forEach { self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredHorizontally) }
-        }
+
+//        NotificationCenter.default.addObserver(self, selector: #selector(setupSearchCondition), name: .init("didTouchUpNext"), object: menuBar)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,9 +39,17 @@ private extension CalendarViewController {
     @objc func reset() {
         collectionView.indexPathsForSelectedItems?.forEach {
             collectionView.deselectItem(at: $0, animated: false)
-            
         }
         viewModel.deselect()
+    }
+    
+    func setupDateSelectHandler() {
+        viewModel.selectHandler = { [weak self] indexPaths in
+            guard let self = self else { return }
+            let selectedItems = self.collectionView.indexPathsForSelectedItems
+            selectedItems?.forEach { self.collectionView.deselectItem(at: $0, animated: false)}
+            indexPaths.forEach { self.collectionView.selectItem(at: $0, animated: false, scrollPosition: .centeredHorizontally) }
+        }
     }
     
     func setupCollectionView() {
@@ -145,11 +150,5 @@ extension CalendarViewController: UICollectionViewDelegateFlowLayout {
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
         viewModel.select(at: indexPath)
-    }
-    
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didDeselectItemAt indexPath: IndexPath) {
-        //viewModel.deselect(at: indexPath)
     }
 }

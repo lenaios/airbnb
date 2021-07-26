@@ -1,0 +1,19 @@
+[
+    {
+        "image": "nature",
+        "description": "자연 생활을 만끽할 수 있는 숙소"
+    },
+    {
+        "image": "special",
+        "description": "독특한 공간"
+    },
+    {
+        "image": "house",
+        "description": "집 전체"
+    },
+    {
+        "image": "dog",
+        "description": "반려동물 동반 가능"
+    }
+]
+

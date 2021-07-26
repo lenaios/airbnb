@@ -8,7 +8,6 @@
 import UIKit
 
 class NearbyDestinationCell: UICollectionViewCell {
-    //static let height: CGFloat = 70
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
