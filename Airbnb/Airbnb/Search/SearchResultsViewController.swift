@@ -48,7 +48,6 @@ class SearchResultsViewController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
         view.addSubview(mapButton)
-        print(SearchConditionModel.shared.start, SearchConditionModel.shared.end)
     }
     
     override func viewWillAppear(_ animated: Bool) {

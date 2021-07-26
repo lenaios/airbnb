@@ -11,6 +11,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private let headerHeight: CGFloat = 74
+    
     lazy var coordinator: Coordinator = MainCoordinator(navigationController: navigationController!)
     
     private let headerText = ["가까운 여행지 둘러보기", "어디에서나, 여행은 살아보는거야!"]
@@ -85,7 +87,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         cell.register(cells[indexPath.section])
         cell.setup(delegate: delegates[indexPath.section])
         cell.setup(dataSource: dataSources[indexPath.section])
-        cell.headerView.text = headerText[indexPath.item]
+        cell.headerView.text = headerText[indexPath.section]
         return cell
     }
     
@@ -93,7 +95,11 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: view.frame.width,
+                          height: (CellHeight.nearbyDestination.rawValue * 2) + 20 + 10 + headerHeight)
+        }
         return CGSize(width: view.frame.width,
-                      height: (70 * 2) + 20 + 10 + 74)
+                      height: (CellHeight.travelStyle.rawValue + 30) + 20 + 10 + headerHeight)
     }
 }

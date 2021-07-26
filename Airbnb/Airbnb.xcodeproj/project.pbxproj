@@ -17,6 +17,7 @@
 		D03DDBEA26AE66280096F756 /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE926AE66280096F756 /* SearchResultsViewModel.swift */; };
 		D03DDBEC26AE67410096F756 /* SearchConditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */; };
 		D03DDBEE26AE974A0096F756 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBED26AE974A0096F756 /* style.json */; };
+		D03DDBF026AE99E10096F756 /* Cell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBEF26AE99E10096F756 /* Cell+Constant.swift */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
 		D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */; };
 		D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */; };
@@ -73,6 +74,7 @@
 		D03DDBE926AE66280096F756 /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditionModel.swift; sourceTree = "<group>"; };
 		D03DDBED26AE974A0096F756 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
+		D03DDBEF26AE99E10096F756 /* Cell+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Constant.swift"; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBar.xib; sourceTree = "<group>"; };
 		D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBar.swift; sourceTree = "<group>"; };
@@ -205,7 +207,9 @@
 				D0757516269E12850083980B /* MainCoordinator.swift */,
 				D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */,
 				D03DDBED26AE974A0096F756 /* style.json */,
+				D03DDBDA26ABC8EF0096F756 /* mock.json */,
 				D0757504269DC1F20083980B /* MainCollectionViewFlowLayout.swift */,
+				D03DDBEF26AE99E10096F756 /* Cell+Constant.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -216,7 +220,6 @@
 				D07574EC269DA3E60083980B /* AppDelegate.swift */,
 				D07574EE269DA3E60083980B /* SceneDelegate.swift */,
 				D07574F5269DA3E70083980B /* Assets.xcassets */,
-				D03DDBDA26ABC8EF0096F756 /* mock.json */,
 				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
 				D075752E269F45450083980B /* Storyboarded.swift */,
 				D0757530269F52070083980B /* UIView+Extension.swift */,
@@ -374,6 +377,7 @@
 				D0757509269DD8A70083980B /* MainCollectionViewCell.swift in Sources */,
 				D0757517269E12850083980B /* MainCoordinator.swift in Sources */,
 				D0757501269DAB490083980B /* MainHeaderView.swift in Sources */,
+				D03DDBF026AE99E10096F756 /* Cell+Constant.swift in Sources */,
 				D03DDBE226ADBF0D0096F756 /* ResultsTableViewController.swift in Sources */,
 				D0757538269FE0CC0083980B /* PurchaseView.swift in Sources */,
 				D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */,

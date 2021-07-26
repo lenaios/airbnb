@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OlY-6E-d5b">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="9yC-Z2-WFd" customClass="MainCollectionViewFlowLayout" customModule="Airbnb" customModuleProvider="target"/>
                                 <cells/>
@@ -31,7 +31,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OlY-6E-d5b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4TY-mC-3Le"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OlY-6E-d5b" secondAttribute="bottom" id="GGd-dz-Uki"/>
+                            <constraint firstAttribute="bottom" secondItem="OlY-6E-d5b" secondAttribute="bottom" id="GGd-dz-Uki"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OlY-6E-d5b" secondAttribute="trailing" id="i0Q-YS-EqU"/>
                             <constraint firstItem="OlY-6E-d5b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wMA-X9-EdC"/>
                         </constraints>
@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="758" y="94"/>
+            <point key="canvasLocation" x="757.97101449275374" y="93.75"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="D1b-eI-OYS">

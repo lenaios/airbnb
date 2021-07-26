@@ -11,8 +11,8 @@ class TravelStyleDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 150,
-                      height: 180)
+        return CGSize(width: CellHeight.travelStyle.rawValue,
+                      height: CellHeight.travelStyle.rawValue + 30)
     }
 }
 

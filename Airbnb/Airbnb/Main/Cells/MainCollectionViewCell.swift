@@ -11,6 +11,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     let headerView: UILabel = {
         let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
     
