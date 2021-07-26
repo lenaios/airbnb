@@ -29,6 +29,19 @@ class DetailViewController: UIViewController {
         return collectionView
     }()
 
+    private lazy var reservationView: UIView = {
+        let reservationView: ReservationView = ReservationView.loadFromNib()
+        reservationView.frame = CGRect(origin: .zero, size: CGSize(width: 343, height: 589))
+        reservationView.center = self.view.center
+        reservationView.layer.cornerRadius = 10
+        reservationView.clipsToBounds = true
+        let dimmedContainerView = UIView(frame: self.view.bounds)
+        dimmedContainerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissReservation)))
+        dimmedContainerView.backgroundColor = .black.withAlphaComponent(0.3)
+        dimmedContainerView.addSubview(reservationView)
+        return dimmedContainerView
+    }()
+    
     var coordinator: Coordinator?
     
 //    static func instantiate() -> DetailViewController {
@@ -53,11 +66,19 @@ class DetailViewController: UIViewController {
         addNavigationBar()
         
         scrollView.contentSize = CGSize(width: view.width, height: view.width + descriptionView.frame.height)
+        purchaseView.coordinator = { [weak self] in
+            guard let self = self else { return }
+            self.view.addSubview(self.reservationView)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func dismissReservation() {
+        reservationView.removeFromSuperview()
     }
     
     private func addNavigationBar() {
@@ -96,7 +117,9 @@ extension DetailViewController: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: ImageCell.identifier,
+            for: indexPath)
         return cell
     }
 }

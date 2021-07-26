@@ -49,6 +49,7 @@ class CalendarViewCoordinator: Coordinator {
     func show() {
         let vc = CalendarViewController.instantiate()
         vc.coordinator = childCoordinators.first
+        vc.navigationItem.backButtonTitle = "Back"
         navigationController.pushViewController(vc, animated: true)
     }
 }

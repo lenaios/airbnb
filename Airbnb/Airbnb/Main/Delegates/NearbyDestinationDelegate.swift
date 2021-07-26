@@ -20,8 +20,8 @@ class NearbyDestinationDelegate: NSObject, UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return CGSize(width: NearbyDestinationCell.height + 100,
-                      height: NearbyDestinationCell.height)
+        return CGSize(width: 70 + 120,
+                      height: 70)
     }
     
     func collectionView(

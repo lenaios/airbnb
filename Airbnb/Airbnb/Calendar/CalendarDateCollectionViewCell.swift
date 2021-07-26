@@ -11,7 +11,7 @@ class CalendarDateCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            dateLabel.backgroundColor = isSelected ? .gray : .yellow
+            dateLabel.backgroundColor = isSelected ? .systemGray5 : .white
         }
     }
     
@@ -20,7 +20,8 @@ class CalendarDateCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.textColor = .label
-        label.backgroundColor = .yellow
+        label.layer.cornerRadius = 10
+        label.clipsToBounds = true
         return label
     }()
     

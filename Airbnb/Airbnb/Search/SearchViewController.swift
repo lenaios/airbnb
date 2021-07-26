@@ -46,7 +46,7 @@ class SearchViewController: UIViewController {
         
         title = "숙소 찾기"
         view.backgroundColor = .systemBackground
-        definesPresentationContext = true
+        //definesPresentationContext = true
         
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -59,6 +59,8 @@ class SearchViewController: UIViewController {
         searchController.searchBar.delegate = self
         searchCompleter.delegate = resultsTableViewController
         resultsTableViewController.delegate = self
+        
+        //navigationItem.rightBarButtonItem = UIBarButtonItem(title: "지우기", style: .plain, target: self, action: #selector(reset))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +75,11 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return .init(width: view.width - (padding * 2), height: 70)
+        return .init(width: view.width - (padding * 2), height: 64)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator?.show()
     }
 }
 

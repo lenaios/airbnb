@@ -8,19 +8,21 @@
 import UIKit
 
 class NearbyDestinationCell: UICollectionViewCell {
-    static let height: CGFloat = 70
+    //static let height: CGFloat = 70
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private let textLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -31,8 +33,16 @@ class NearbyDestinationCell: UICollectionViewCell {
     }
     
     override func layoutSubviews() {
-        imageView.frame = CGRect(x: 0, y: 0, width: Self.height, height: Self.height)
-        textLabel.frame = CGRect(x: imageView.frame.width + 10, y: 0, width: 90, height: Self.height)
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor),
+            textLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            textLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 10),
+            textLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            textLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor)
+        ])
     }
     
     required init?(coder: NSCoder) {

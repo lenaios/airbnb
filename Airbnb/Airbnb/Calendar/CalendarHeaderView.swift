@@ -16,7 +16,7 @@ class CalendarHeaderView: UICollectionReusableView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .label
-        label.backgroundColor = .yellow
+        label.font = .systemFont(ofSize: 18, weight: .medium)
         return label
     }()
     

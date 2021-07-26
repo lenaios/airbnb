@@ -23,6 +23,9 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="예약하기"/>
+                    <connections>
+                        <action selector="reserve" destination="iN0-l3-epB" eventType="touchUpInside" id="5yK-ht-KOv"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="fzw-Nt-EXc">
                     <rect key="frame" x="20" y="15" width="234" height="44"/>

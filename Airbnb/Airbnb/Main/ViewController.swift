@@ -91,6 +91,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDa
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width,
-                      height: (NearbyDestinationCell.height * 2) + 20 + 10 + 74)
+                      height: (70 * 2) + 20 + 10 + 74)
     }
 }

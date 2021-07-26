@@ -11,6 +11,9 @@
 		D03DDBDD26AC33EE0096F756 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */; };
 		D03DDBE026ADB83E0096F756 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBDF26ADB83E0096F756 /* SearchViewController.swift */; };
 		D03DDBE226ADBF0D0096F756 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE126ADBF0D0096F756 /* ResultsTableViewController.swift */; };
+		D03DDBE426ADD3F20096F756 /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE326ADD3F20096F756 /* ReserveViewController.swift */; };
+		D03DDBE626ADD7F00096F756 /* ReservationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBE526ADD7F00096F756 /* ReservationView.xib */; };
+		D03DDBE826ADD8070096F756 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE726ADD8070096F756 /* ReservationView.swift */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
 		D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */; };
 		D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */; };
@@ -61,6 +64,9 @@
 		D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		D03DDBDF26ADB83E0096F756 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D03DDBE126ADBF0D0096F756 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		D03DDBE326ADD3F20096F756 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
+		D03DDBE526ADD7F00096F756 /* ReservationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationView.xib; sourceTree = "<group>"; };
+		D03DDBE726ADD8070096F756 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBar.xib; sourceTree = "<group>"; };
 		D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBar.swift; sourceTree = "<group>"; };
@@ -169,6 +175,9 @@
 				D07574FA269DA3E70083980B /* Info.plist */,
 				D0EC356926A1EF9300529357 /* Detail */,
 				D05070F526A986B400B8F054 /* Calendar */,
+				D03DDBE326ADD3F20096F756 /* ReserveViewController.swift */,
+				D03DDBE526ADD7F00096F756 /* ReservationView.xib */,
+				D03DDBE726ADD8070096F756 /* ReservationView.swift */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -326,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */,
+				D03DDBE626ADD7F00096F756 /* ReservationView.xib in Resources */,
 				D075751B269E13720083980B /* ResultCollectionViewCell.xib in Resources */,
 				D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */,
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
@@ -360,6 +370,8 @@
 				D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */,
 				D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */,
 				D0757510269DDCA10083980B /* NearbyDestinationDelegate.swift in Sources */,
+				D03DDBE426ADD3F20096F756 /* ReserveViewController.swift in Sources */,
+				D03DDBE826ADD8070096F756 /* ReservationView.swift in Sources */,
 				D03DDBE026ADB83E0096F756 /* SearchViewController.swift in Sources */,
 				D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */,
 				D07574F1269DA3E60083980B /* ViewController.swift in Sources */,
