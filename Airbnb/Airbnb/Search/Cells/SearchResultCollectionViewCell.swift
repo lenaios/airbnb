@@ -7,16 +7,18 @@
 
 import UIKit
 
-class SearchResultsCollectionViewCell: UICollectionViewCell {
+class SearchResultCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var imageCollectionView: UICollectionView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var rate: UILabel!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var heart: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    private let heart = UIImage(systemName: "heart")
-    private let unheart = UIImage(systemName: "heart.fill")
+    private let emptyHeart = UIImage(systemName: "heart")
+    private let fillHeart = UIImage(systemName: "heart.fill")
     
     var isHeart: Bool = false
     
@@ -36,15 +38,21 @@ class SearchResultsCollectionViewCell: UICollectionViewCell {
     
     @IBAction func touchUpHeart(_ sender: Any) {
         if isHeart {
-            heartButton.setImage(heart, for: .normal)
+            heart.setImage(emptyHeart, for: .normal)
         } else {
-            heartButton.setImage(unheart, for: .normal)
+            heart.setImage(fillHeart, for: .normal)
         }
         isHeart = !isHeart
     }
+    
+    func setup(viewModel: SearchResultViewModel) {
+        title.text = viewModel.title
+        price.text = viewModel.price
+        rate.text = viewModel.rate
+    }
 }
 
-extension SearchResultsCollectionViewCell: UICollectionViewDataSource {
+extension SearchResultCollectionViewCell: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
@@ -69,7 +77,7 @@ extension SearchResultsCollectionViewCell: UICollectionViewDataSource {
     }
 }
 
-extension SearchResultsCollectionViewCell: UICollectionViewDelegateFlowLayout {
+extension SearchResultCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,

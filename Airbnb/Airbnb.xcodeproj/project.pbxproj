@@ -14,10 +14,13 @@
 		D03DDBE426ADD3F20096F756 /* ReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE326ADD3F20096F756 /* ReserveViewController.swift */; };
 		D03DDBE626ADD7F00096F756 /* ReservationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBE526ADD7F00096F756 /* ReservationView.xib */; };
 		D03DDBE826ADD8070096F756 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE726ADD8070096F756 /* ReservationView.swift */; };
-		D03DDBEA26AE66280096F756 /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE926AE66280096F756 /* SearchResultsViewModel.swift */; };
+		D03DDBEA26AE66280096F756 /* SearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBE926AE66280096F756 /* SearchResultViewModel.swift */; };
 		D03DDBEC26AE67410096F756 /* SearchConditionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */; };
 		D03DDBEE26AE974A0096F756 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBED26AE974A0096F756 /* style.json */; };
 		D03DDBF026AE99E10096F756 /* Cell+Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBEF26AE99E10096F756 /* Cell+Constant.swift */; };
+		D03DDBF326AEA7660096F756 /* Accomodation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBF226AEA7650096F756 /* Accomodation.swift */; };
+		D03DDBF526AEA8690096F756 /* bnb.json in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBF426AEA8690096F756 /* bnb.json */; };
+		D03DDC0C26AFA9D40096F756 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDC0B26AFA9D40096F756 /* RepositoryService.swift */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
 		D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */; };
 		D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */; };
@@ -36,8 +39,8 @@
 		D0757513269DEA7A0083980B /* TravelStyleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */; };
 		D0757515269E0E590083980B /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757514269E0E590083980B /* SearchResultsViewController.swift */; };
 		D0757517269E12850083980B /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757516269E12850083980B /* MainCoordinator.swift */; };
-		D075751A269E13720083980B /* SearchResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757518269E13720083980B /* SearchResultsCollectionViewCell.swift */; };
-		D075751B269E13720083980B /* SearchResultsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* SearchResultsCollectionViewCell.xib */; };
+		D075751A269E13720083980B /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757518269E13720083980B /* SearchResultCollectionViewCell.swift */; };
+		D075751B269E13720083980B /* SearchResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757519269E13720083980B /* SearchResultCollectionViewCell.xib */; };
 		D075751D269E21F30083980B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075751C269E21F30083980B /* DetailViewController.swift */; };
 		D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0757524269EBDDD0083980B /* NavigationBar.xib */; };
 		D0757527269EBF7B0083980B /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0757526269EBF7B0083980B /* NavigationBar.swift */; };
@@ -71,10 +74,13 @@
 		D03DDBE326ADD3F20096F756 /* ReserveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserveViewController.swift; sourceTree = "<group>"; };
 		D03DDBE526ADD7F00096F756 /* ReservationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReservationView.xib; sourceTree = "<group>"; };
 		D03DDBE726ADD8070096F756 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
-		D03DDBE926AE66280096F756 /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
+		D03DDBE926AE66280096F756 /* SearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModel.swift; sourceTree = "<group>"; };
 		D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditionModel.swift; sourceTree = "<group>"; };
 		D03DDBED26AE974A0096F756 /* style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		D03DDBEF26AE99E10096F756 /* Cell+Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Constant.swift"; sourceTree = "<group>"; };
+		D03DDBF226AEA7650096F756 /* Accomodation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accomodation.swift; sourceTree = "<group>"; };
+		D03DDBF426AEA8690096F756 /* bnb.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bnb.json; sourceTree = "<group>"; };
+		D03DDC0B26AFA9D40096F756 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBar.xib; sourceTree = "<group>"; };
 		D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBar.swift; sourceTree = "<group>"; };
@@ -95,8 +101,8 @@
 		D0757512269DEA7A0083980B /* TravelStyleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelStyleDelegate.swift; sourceTree = "<group>"; };
 		D0757514269E0E590083980B /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		D0757516269E12850083980B /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		D0757518269E13720083980B /* SearchResultsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsCollectionViewCell.swift; sourceTree = "<group>"; };
-		D0757519269E13720083980B /* SearchResultsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D0757518269E13720083980B /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		D0757519269E13720083980B /* SearchResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCollectionViewCell.xib; sourceTree = "<group>"; };
 		D075751C269E21F30083980B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D0757524269EBDDD0083980B /* NavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBar.xib; sourceTree = "<group>"; };
 		D0757526269EBF7B0083980B /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -135,15 +141,42 @@
 		D03DDBDE26ADB82C0096F756 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */,
+				D03DDBF126AEA7300096F756 /* Cells */,
 				D03DDBDF26ADB83E0096F756 /* SearchViewController.swift */,
 				D03DDBE126ADBF0D0096F756 /* ResultsTableViewController.swift */,
-				D0757514269E0E590083980B /* SearchResultsViewController.swift */,
-				D0757518269E13720083980B /* SearchResultsCollectionViewCell.swift */,
-				D0757519269E13720083980B /* SearchResultsCollectionViewCell.xib */,
-				D03DDBE926AE66280096F756 /* SearchResultsViewModel.swift */,
-				D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */,
+				D03DDC0A26AFA9740096F756 /* ViewModels */,
+				D03DDC0926AFA9670096F756 /* Models */,
+				D03DDBF426AEA8690096F756 /* bnb.json */,
+				D03DDC0B26AFA9D40096F756 /* RepositoryService.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		D03DDBF126AEA7300096F756 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D0757518269E13720083980B /* SearchResultCollectionViewCell.swift */,
+				D0757519269E13720083980B /* SearchResultCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D03DDC0926AFA9670096F756 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D03DDBF226AEA7650096F756 /* Accomodation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D03DDC0A26AFA9740096F756 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0757514269E0E590083980B /* SearchResultsViewController.swift */,
+				D03DDBE926AE66280096F756 /* SearchResultViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D05070F526A986B400B8F054 /* Calendar */ = {
@@ -348,8 +381,9 @@
 			files = (
 				D03DDBEE26AE974A0096F756 /* style.json in Resources */,
 				D07574F9269DA3E70083980B /* LaunchScreen.storyboard in Resources */,
+				D03DDBF526AEA8690096F756 /* bnb.json in Resources */,
 				D03DDBE626ADD7F00096F756 /* ReservationView.xib in Resources */,
-				D075751B269E13720083980B /* SearchResultsCollectionViewCell.xib in Resources */,
+				D075751B269E13720083980B /* SearchResultCollectionViewCell.xib in Resources */,
 				D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */,
 				D0757525269EBDDD0083980B /* NavigationBar.xib in Resources */,
 				D0EC356826A1E91000529357 /* DescriptionView.xib in Resources */,
@@ -393,18 +427,20 @@
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
 				D03DDBDD26AC33EE0096F756 /* CalendarViewModel.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
+				D03DDBF326AEA7660096F756 /* Accomodation.swift in Sources */,
 				D0757529269EE5270083980B /* ImageCell.swift in Sources */,
 				D0EC357E26A31F1500529357 /* CalendarViewController.swift in Sources */,
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,
-				D075751A269E13720083980B /* SearchResultsCollectionViewCell.swift in Sources */,
+				D075751A269E13720083980B /* SearchResultCollectionViewCell.swift in Sources */,
 				D0757515269E0E590083980B /* SearchResultsViewController.swift in Sources */,
 				D075752F269F45450083980B /* Storyboarded.swift in Sources */,
 				D0757531269F52070083980B /* UIView+Extension.swift in Sources */,
+				D03DDC0C26AFA9D40096F756 /* RepositoryService.swift in Sources */,
 				D0EC358426A3206100529357 /* CalendarDateCollectionViewCell.swift in Sources */,
 				D075751D269E21F30083980B /* DetailViewController.swift in Sources */,
-				D03DDBEA26AE66280096F756 /* SearchResultsViewModel.swift in Sources */,
+				D03DDBEA26AE66280096F756 /* SearchResultViewModel.swift in Sources */,
 				D03DDBEC26AE67410096F756 /* SearchConditionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

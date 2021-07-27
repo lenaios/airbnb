@@ -80,9 +80,13 @@ class DetailCoordinator: Coordinator {
     }
     
     func show() {
-        let vc: DetailViewController = DetailViewController.instantiate()
+        let vc = viewController()
         vc.coordinator = childCoordinators.first
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func viewController() -> DetailViewController {
+        return DetailViewController.instantiate()
     }
 }
 

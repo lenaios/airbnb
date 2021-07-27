@@ -44,10 +44,6 @@ class DetailViewController: UIViewController {
     
     var coordinator: Coordinator?
     
-//    static func instantiate() -> DetailViewController {
-//        return DetailViewController()
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

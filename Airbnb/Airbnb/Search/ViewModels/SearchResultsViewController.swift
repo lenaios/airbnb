@@ -11,14 +11,14 @@ class SearchResultsViewController: UIViewController {
     
     var coordinator: Coordinator?
     
-    private let padding: CGFloat = 25
+    private let padding: CGFloat = 15
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(SearchResultsCollectionViewCell.nib(),
-                                forCellWithReuseIdentifier: SearchResultsCollectionViewCell.identifier)
+        collectionView.register(SearchResultCollectionViewCell.nib(),
+                                forCellWithReuseIdentifier: SearchResultCollectionViewCell.identifier)
         collectionView.backgroundColor = .systemBackground
         collectionView.showsVerticalScrollIndicator = false
         return collectionView
@@ -36,9 +36,11 @@ class SearchResultsViewController: UIViewController {
         return button
     }()
     
-//    static func instantiate() -> ResultViewController {
-//        return ResultViewController()
-//    }
+    var viewModel: [SearchResultViewModel] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,8 @@ class SearchResultsViewController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
         view.addSubview(mapButton)
+        
+        search()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +67,10 @@ class SearchResultsViewController: UIViewController {
                                  y: view.frame.height - 104,
                                  width: 80,
                                  height: 34)
+    }
+    
+    private func search() {
+        viewModel = SearchResultsViewModel().results
     }
 }
 
@@ -90,7 +98,7 @@ extension SearchResultsViewController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        4
+        viewModel.count
     }
     
     func collectionView(
@@ -98,8 +106,9 @@ extension SearchResultsViewController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: SearchResultsCollectionViewCell.identifier,
-            for: indexPath)
+            withReuseIdentifier: SearchResultCollectionViewCell.identifier,
+            for: indexPath) as! SearchResultCollectionViewCell
+        cell.setup(viewModel: viewModel[indexPath.item])
         return cell
     }
 }
