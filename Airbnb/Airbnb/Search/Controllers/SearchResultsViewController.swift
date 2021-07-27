@@ -36,7 +36,7 @@ class SearchResultsViewController: UIViewController {
         return button
     }()
     
-    var viewModel: [SearchResultViewModel] = [] {
+    var viewModel: [SearchResultViewModel] = SearchResultViewModels().results {
         didSet {
             collectionView.reloadData()
         }
@@ -50,8 +50,6 @@ class SearchResultsViewController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
         view.addSubview(mapButton)
-        
-        search()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,10 +65,6 @@ class SearchResultsViewController: UIViewController {
                                  y: view.frame.height - 104,
                                  width: 80,
                                  height: 34)
-    }
-    
-    private func search() {
-        viewModel = SearchResultsViewModel().results
     }
 }
 

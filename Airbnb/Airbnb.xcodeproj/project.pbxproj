@@ -143,8 +143,7 @@
 			children = (
 				D03DDBEB26AE67410096F756 /* SearchConditionModel.swift */,
 				D03DDBF126AEA7300096F756 /* Cells */,
-				D03DDBDF26ADB83E0096F756 /* SearchViewController.swift */,
-				D03DDBE126ADBF0D0096F756 /* ResultsTableViewController.swift */,
+				D03DDC0D26AFB87D0096F756 /* Controllers */,
 				D03DDC0A26AFA9740096F756 /* ViewModels */,
 				D03DDC0926AFA9670096F756 /* Models */,
 				D03DDBF426AEA8690096F756 /* bnb.json */,
@@ -173,10 +172,32 @@
 		D03DDC0A26AFA9740096F756 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D0757514269E0E590083980B /* SearchResultsViewController.swift */,
 				D03DDBE926AE66280096F756 /* SearchResultViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D03DDC0D26AFB87D0096F756 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D03DDBDF26ADB83E0096F756 /* SearchViewController.swift */,
+				D03DDBE126ADBF0D0096F756 /* ResultsTableViewController.swift */,
+				D0757514269E0E590083980B /* SearchResultsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D03DDC0E26AFCC480096F756 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0757524269EBDDD0083980B /* NavigationBar.xib */,
+				D0757526269EBF7B0083980B /* NavigationBar.swift */,
+				D0757533269FD7440083980B /* DescriptionView.swift */,
+				D0EC356726A1E91000529357 /* DescriptionView.xib */,
+				D0757535269FE0C50083980B /* PurchaseView.xib */,
+				D0757537269FE0CC0083980B /* PurchaseView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D05070F526A986B400B8F054 /* Calendar */ = {
@@ -275,12 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				D075751C269E21F30083980B /* DetailViewController.swift */,
-				D0757524269EBDDD0083980B /* NavigationBar.xib */,
-				D0757526269EBF7B0083980B /* NavigationBar.swift */,
-				D0757533269FD7440083980B /* DescriptionView.swift */,
-				D0EC356726A1E91000529357 /* DescriptionView.xib */,
-				D0757535269FE0C50083980B /* PurchaseView.xib */,
-				D0757537269FE0CC0083980B /* PurchaseView.swift */,
+				D03DDC0E26AFCC480096F756 /* Views */,
 				D03DDBE326ADD3F20096F756 /* ReserveViewController.swift */,
 				D03DDBE526ADD7F00096F756 /* ReservationView.xib */,
 				D03DDBE726ADD8070096F756 /* ReservationView.swift */,

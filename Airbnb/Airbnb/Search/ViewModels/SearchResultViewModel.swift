@@ -8,11 +8,11 @@
 import Foundation
 
 protocol NetworkManager {
-    func request(completion: @escaping ([Accomodation]) -> Void)
+    func request<T: Decodable>(completion: @escaping ([T]) -> Void)
 }
 
 class MockNetworkManager: NetworkManager {
-    func request(completion: @escaping ([Accomodation]) -> Void) {
+    func request<T: Decodable>(completion: @escaping ([T]) -> Void) {
         guard
             let path = Bundle.main.path(forResource: "bnb", ofType: "json"),
             let jsonString = try? String(contentsOfFile: path),
@@ -20,7 +20,7 @@ class MockNetworkManager: NetworkManager {
             return
         }
         do {
-            let data = try JSONDecoder().decode([Accomodation].self, from: data)
+            let data = try JSONDecoder().decode([T].self, from: data)
             completion(data)
         } catch {
             // handle error
@@ -28,7 +28,7 @@ class MockNetworkManager: NetworkManager {
     }
 }
 
-class SearchResultsViewModel {
+class SearchResultViewModels {
 
     var results: [SearchResultViewModel] = []
     let service = RepositoryService(networkManager: MockNetworkManager())
