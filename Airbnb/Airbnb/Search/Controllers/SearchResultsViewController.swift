@@ -36,11 +36,7 @@ class SearchResultsViewController: UIViewController {
         return button
     }()
     
-    var viewModel: [SearchResultViewModel] = SearchResultViewModels().results {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    var viewModel: [SearchResultViewModel] = SearchResultViewModels().viewModels
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +46,8 @@ class SearchResultsViewController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
         view.addSubview(mapButton)
+        
+        bindUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +63,18 @@ class SearchResultsViewController: UIViewController {
                                  y: view.frame.height - 104,
                                  width: 80,
                                  height: 34)
+    }
+    
+    func bindUI() {
+        viewModel.enumerated().forEach { (index, model) in
+            model.title.bind { title in
+                DispatchQueue.main.async {
+                    let cell = self.collectionView.cellForItem(
+                        at: IndexPath(item: index, section: 0)) as! SearchResultCollectionViewCell
+                    cell.title.text = title
+                }
+            }
+        }
     }
 }
 
@@ -102,7 +112,6 @@ extension SearchResultsViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(
             withReuseIdentifier: SearchResultCollectionViewCell.identifier,
             for: indexPath) as! SearchResultCollectionViewCell
-        cell.setup(viewModel: viewModel[indexPath.item])
         return cell
     }
 }

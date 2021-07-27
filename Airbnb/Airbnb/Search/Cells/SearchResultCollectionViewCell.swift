@@ -44,12 +44,6 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         }
         isHeart = !isHeart
     }
-    
-    func setup(viewModel: SearchResultViewModel) {
-        title.text = viewModel.title
-        price.text = viewModel.price
-        rate.text = viewModel.rate
-    }
 }
 
 extension SearchResultCollectionViewCell: UICollectionViewDataSource {

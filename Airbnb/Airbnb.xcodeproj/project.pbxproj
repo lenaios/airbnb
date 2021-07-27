@@ -21,6 +21,9 @@
 		D03DDBF326AEA7660096F756 /* Accomodation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDBF226AEA7650096F756 /* Accomodation.swift */; };
 		D03DDBF526AEA8690096F756 /* bnb.json in Resources */ = {isa = PBXBuildFile; fileRef = D03DDBF426AEA8690096F756 /* bnb.json */; };
 		D03DDC0C26AFA9D40096F756 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDC0B26AFA9D40096F756 /* RepositoryService.swift */; };
+		D03DDC1026AFD28B0096F756 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDC0F26AFD28B0096F756 /* Observable.swift */; };
+		D03DDC1226AFDC470096F756 /* SearchResultViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDC1126AFDC470096F756 /* SearchResultViewModels.swift */; };
+		D03DDC1426AFDC7B0096F756 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03DDC1326AFDC7B0096F756 /* NetworkManager.swift */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
 		D05070F926AA6E2500B8F054 /* BottomMenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */; };
 		D05070FB26AA6E3400B8F054 /* BottomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */; };
@@ -81,6 +84,9 @@
 		D03DDBF226AEA7650096F756 /* Accomodation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accomodation.swift; sourceTree = "<group>"; };
 		D03DDBF426AEA8690096F756 /* bnb.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bnb.json; sourceTree = "<group>"; };
 		D03DDC0B26AFA9D40096F756 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		D03DDC0F26AFD28B0096F756 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		D03DDC1126AFDC470096F756 /* SearchResultViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewModels.swift; sourceTree = "<group>"; };
+		D03DDC1326AFDC7B0096F756 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuBar.xib; sourceTree = "<group>"; };
 		D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenuBar.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				D03DDC0926AFA9670096F756 /* Models */,
 				D03DDBF426AEA8690096F756 /* bnb.json */,
 				D03DDC0B26AFA9D40096F756 /* RepositoryService.swift */,
+				D03DDC1326AFDC7B0096F756 /* NetworkManager.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -173,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				D03DDBE926AE66280096F756 /* SearchResultViewModel.swift */,
+				D03DDC1126AFDC470096F756 /* SearchResultViewModels.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				D07574FA269DA3E70083980B /* Info.plist */,
 				D0EC356926A1EF9300529357 /* Detail */,
 				D05070F526A986B400B8F054 /* Calendar */,
+				D03DDC0F26AFD28B0096F756 /* Observable.swift */,
 			);
 			path = Airbnb;
 			sourceTree = "<group>";
@@ -443,9 +452,12 @@
 				D0757505269DC1F20083980B /* MainCollectionViewFlowLayout.swift in Sources */,
 				D03DDBDD26AC33EE0096F756 /* CalendarViewModel.swift in Sources */,
 				D0757507269DD33F0083980B /* NearbyDestinationCell.swift in Sources */,
+				D03DDC1426AFDC7B0096F756 /* NetworkManager.swift in Sources */,
+				D03DDC1226AFDC470096F756 /* SearchResultViewModels.swift in Sources */,
 				D03DDBF326AEA7660096F756 /* Accomodation.swift in Sources */,
 				D0757529269EE5270083980B /* ImageCell.swift in Sources */,
 				D0EC357E26A31F1500529357 /* CalendarViewController.swift in Sources */,
+				D03DDC1026AFD28B0096F756 /* Observable.swift in Sources */,
 				D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */,
 				D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */,
 				D075750B269DD8B90083980B /* TravelStyleCell.swift in Sources */,

@@ -7,52 +7,11 @@
 
 import Foundation
 
-protocol NetworkManager {
-    func request<T: Decodable>(completion: @escaping ([T]) -> Void)
-}
-
-class MockNetworkManager: NetworkManager {
-    func request<T: Decodable>(completion: @escaping ([T]) -> Void) {
-        guard
-            let path = Bundle.main.path(forResource: "bnb", ofType: "json"),
-            let jsonString = try? String(contentsOfFile: path),
-            let data = jsonString.data(using: .utf8) else {
-            return
-        }
-        do {
-            let data = try JSONDecoder().decode([T].self, from: data)
-            completion(data)
-        } catch {
-            // handle error
-        }
-    }
-}
-
-class SearchResultViewModels {
-
-    var results: [SearchResultViewModel] = []
-    let service = RepositoryService(networkManager: MockNetworkManager())
-    
-    init() {
-        service.search { data in
-            data.forEach { acc in
-                let viewModel = SearchResultViewModel.init(
-                    rate: acc.rate,
-                    title: acc.title,
-                    price: acc.price,
-                    wish: acc.wish)
-                self.results.append(viewModel)
-            }
-        }
-    }
-}
-
-
 class SearchResultViewModel {
-    let rate: String
-    let title: String
-    let price: String
-    let isHeart: Bool
+    let rate: Observable<String>
+    let title: Observable<String>
+    var price: Observable<String>
+    let isHeart: Observable<Bool>
     
     init(
         rate: Int,
@@ -60,10 +19,10 @@ class SearchResultViewModel {
         price: String,
         wish: Bool
         ) {
-        self.rate = rate.makeString()
-        self.title = title
-        self.price = price + " / 박"
-        self.isHeart = wish
+        self.rate = Observable(value: rate.makeString())
+        self.title = Observable(value: title)
+        self.price = Observable(value: price)
+        self.isHeart = Observable(value: wish)
     }
 }
 
