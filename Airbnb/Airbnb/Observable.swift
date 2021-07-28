@@ -8,16 +8,16 @@
 import Foundation
 
 class Observable<T> {
-    typealias Completion = (T) -> Void
+    typealias Completion = (T?) -> Void
     private var completion: Completion?
     
-    var value: T {
+    var value: T? {
         didSet {
             completion?(value)
         }
     }
     
-    init(value: T) {
+    init(value: T? = nil) {
         self.value = value
     }
     

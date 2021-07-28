@@ -23,7 +23,9 @@ final class CalendarViewController: UIViewController, Storyboarded {
         setupDateSelectHandler()
         addMenuBar()
 
-//        NotificationCenter.default.addObserver(self, selector: #selector(setupSearchCondition), name: .init("didTouchUpNext"), object: menuBar)
+        NotificationCenter.default.addObserver(forName: .init("selectedDate"), object: menuBar, queue: .current) { _ in
+            //
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +33,7 @@ final class CalendarViewController: UIViewController, Storyboarded {
         navigationController?.navigationBar.isHidden = false
     }
     
-    weak var coordinator: Coordinator?
+    weak var coordinator: MainCoordinator?
     var viewModel: CalendarViewModel = CalendarViewModel()
 }
 

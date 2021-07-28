@@ -18,7 +18,7 @@ class CalendarViewModel {
     
     var calendar = Calendar(identifier: .gregorian)
     
-    private var selectedMode: SelectedMode = .none
+    private var selectedState: SelectedMode = .none
     
     private let today = Date()
     
@@ -29,12 +29,8 @@ class CalendarViewModel {
     private var endDate: Date?
     
     func select(at indexPath: IndexPath) {
-        let date = date(at: indexPath)
-        switch selectedMode {
-        case .none:
-            startDate = date
-            start = indexPath
-            selectedMode = .one
+        guard let date = date(at: indexPath) else { return }
+        switch selectedState {
         case .one:
             if let _ = startDate, startDate! < date {
                 endDate = date
@@ -45,13 +41,13 @@ class CalendarViewModel {
                 start = indexPath
                 startDate = date
             }
-            selectedMode = .all
-        case .all:
+            selectedState = .all
+        default:
             startDate = date
             endDate = nil
             start = indexPath
             end = nil
-            selectedMode = .one
+            selectedState = .one
             selectHandler?([start!])
         }
     }
@@ -61,7 +57,7 @@ class CalendarViewModel {
         end = nil
         startDate = nil
         endDate = nil
-        selectedMode = .none
+        selectedState = .none
     }
 }
 
@@ -95,11 +91,11 @@ extension CalendarViewModel {
         return day
     }
     
-    func date(at indexPath: IndexPath) -> Date {
+    func date(at indexPath: IndexPath) -> Date? {
         let year = year(at: indexPath)
         let month = month(at: indexPath)
-        let day = day(at: indexPath)
+        guard let day = day(at: indexPath) else { return nil }
         let dateComponents = DateComponents(calendar: calendar, year: year, month: month, day: day)
-        return calendar.date(from: dateComponents)!
+        return calendar.date(from: dateComponents)
     }
 }

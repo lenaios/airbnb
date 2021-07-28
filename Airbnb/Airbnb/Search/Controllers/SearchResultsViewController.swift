@@ -9,7 +9,7 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
     
-    var coordinator: Coordinator?
+    weak var coordinator: Coordinator?
     
     private let padding: CGFloat = 15
     
@@ -47,6 +47,9 @@ class SearchResultsViewController: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(mapButton)
         
+        let backBarButton = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backToMain))
+        navigationItem.setLeftBarButton(backBarButton, animated: false)
+        
         bindUI()
     }
     
@@ -75,6 +78,10 @@ class SearchResultsViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    @objc func backToMain() {
+        navigationController?.popToRootViewController(animated: true)
     }
 }
 

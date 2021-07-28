@@ -211,6 +211,8 @@
 		D05070F526A986B400B8F054 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */,
+				D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */,
 				D0EC357D26A31F1500529357 /* CalendarViewController.swift */,
 				D0EC358326A3206100529357 /* CalendarDateCollectionViewCell.swift */,
 				D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */,
@@ -286,8 +288,6 @@
 				D07574F7269DA3E70083980B /* LaunchScreen.storyboard */,
 				D075752E269F45450083980B /* Storyboarded.swift */,
 				D0757530269F52070083980B /* UIView+Extension.swift */,
-				D05070F826AA6E2500B8F054 /* BottomMenuBar.xib */,
-				D05070FA26AA6E3400B8F054 /* BottomMenuBar.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

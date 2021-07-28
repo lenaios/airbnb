@@ -17,11 +17,14 @@
                     <rect key="frame" x="20" y="22" width="52" height="30"/>
                     <color key="tintColor" systemColor="systemPinkColor"/>
                     <state key="normal" title="건너뛰기"/>
+                    <connections>
+                        <action selector="touchUpSkip:" destination="iN0-l3-epB" eventType="touchUpInside" id="CPT-Eu-5Do"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuU-w5-lgP">
                     <rect key="frame" x="364" y="22" width="30" height="30"/>
                     <color key="tintColor" systemColor="systemPinkColor"/>
-                    <state key="normal" title="다음"/>
+                    <state key="normal" title="검색"/>
                     <connections>
                         <action selector="touchUpNext:" destination="iN0-l3-epB" eventType="touchUpInside" id="Cel-Q6-HC1"/>
                     </connections>

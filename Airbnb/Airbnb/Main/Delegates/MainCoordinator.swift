@@ -43,6 +43,12 @@ class MainCoordinator: Coordinator {
     
     func moveToCalendar() {
         let vc: CalendarViewController = CalendarViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func moveToResults() {
+        let vc = SearchResultsViewController()
         navigationController.pushViewController(vc, animated: true)
     }
 }
