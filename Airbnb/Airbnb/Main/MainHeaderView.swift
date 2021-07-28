@@ -11,7 +11,7 @@ class MainHeaderView: UICollectionReusableView {
     
     private let padding: CGFloat = 20
     
-    var coordinator: Coordinator?
+    weak var coordinator: MainCoordinator?
     
     private let imageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "home"))
@@ -51,6 +51,6 @@ class MainHeaderView: UICollectionReusableView {
     }
     
     @objc func touchUpSearch() {
-        coordinator?.show()
+        coordinator?.moveToSearch()
     }
 }

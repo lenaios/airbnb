@@ -17,7 +17,7 @@ class SearchViewController: UIViewController {
     
     private let dataSource = NearbyDestinationDataSource()
     
-    var coordinator: Coordinator?
+    weak var coordinator: MainCoordinator?
     
     private lazy var searchController: UISearchController = {
         let searchController = UISearchController(searchResultsController: resultsTableViewController)
@@ -79,7 +79,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator?.show()
+        coordinator?.moveToCalendar()
     }
 }
 
@@ -93,6 +93,6 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: ResultsTableViewControllerDelegate {
     func show() {
-        coordinator?.show()
+        coordinator?.moveToCalendar()
     }
 }

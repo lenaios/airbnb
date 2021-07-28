@@ -31,7 +31,7 @@ final class CalendarViewController: UIViewController, Storyboarded {
         navigationController?.navigationBar.isHidden = false
     }
     
-    var coordinator: Coordinator?
+    weak var coordinator: Coordinator?
     var viewModel: CalendarViewModel = CalendarViewModel()
 }
 

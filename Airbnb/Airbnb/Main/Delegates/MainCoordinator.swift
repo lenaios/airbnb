@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
     
-    func show()
+    func start()
     func dismiss()
 }
 
@@ -22,81 +22,27 @@ extension Coordinator {
 }
 
 class MainCoordinator: Coordinator {
-    var childCoordinators: [Coordinator]
-    var navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        childCoordinators = [CalendarViewCoordinator(navigationController: navigationController)]
-    }
-
-    func show() {
-        let vc: SearchViewController = SearchViewController.instantiate()
-        vc.coordinator = childCoordinators.first
-        navigationController.pushViewController(vc, animated: true)
-    }
-}
-
-class CalendarViewCoordinator: Coordinator {
-    var childCoordinators: [Coordinator]
-    var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        childCoordinators = [ResultCoordinator(navigationController: navigationController)]
-    }
-    
-    func show() {
-        let vc = CalendarViewController.instantiate()
-        vc.coordinator = childCoordinators.first
-        vc.navigationItem.backButtonTitle = "Back"
-        navigationController.pushViewController(vc, animated: true)
-    }
-}
-
-class ResultCoordinator: Coordinator {
-    var childCoordinators: [Coordinator]
-    var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        childCoordinators = [DetailCoordinator(navigationController: navigationController)]
-        self.navigationController = navigationController
-    }
-    
-    func show() {
-        let vc: SearchResultsViewController = SearchResultsViewController.instantiate()
-        vc.coordinator = childCoordinators.first
-        navigationController.pushViewController(vc, animated: true)
-    }
-}
-
-class DetailCoordinator: Coordinator {
-    var childCoordinators: [Coordinator]
-    var navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        childCoordinators = [FakeCoordinator(navigationController: navigationController)]
-    }
-    
-    func show() {
-        let vc = viewController()
-        vc.coordinator = childCoordinators.first
-        navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func viewController() -> DetailViewController {
-        return DetailViewController.instantiate()
-    }
-}
-
-class FakeCoordinator: Coordinator {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+
+    func start() {
+        let vc = ViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
     
-    func show() { }
+    func moveToSearch() {
+        let vc: SearchViewController = SearchViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func moveToCalendar() {
+        let vc: CalendarViewController = CalendarViewController.instantiate()
+        navigationController.pushViewController(vc, animated: true)
+    }
 }

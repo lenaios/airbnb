@@ -9,9 +9,9 @@ import UIKit
 
 class NearbyDestinationDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     
-    var coordinator: Coordinator
+    weak var coordinator: MainCoordinator?
     
-    init(coordinator: Coordinator) {
+    init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
     }
     
@@ -27,7 +27,7 @@ class NearbyDestinationDelegate: NSObject, UICollectionViewDelegateFlowLayout {
     func collectionView(
         _ collectionView: UICollectionView,
         didSelectItemAt indexPath: IndexPath) {
-        coordinator.show()
+        coordinator?.moveToSearch()
     }
 }
 

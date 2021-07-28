@@ -93,7 +93,7 @@ extension SearchResultsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        coordinator?.show()
+        coordinator?.start()
     }
 }
 

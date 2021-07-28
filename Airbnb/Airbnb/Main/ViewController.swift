@@ -7,18 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let headerHeight: CGFloat = 74
     
-    lazy var coordinator: Coordinator = MainCoordinator(navigationController: navigationController!)
+    weak var coordinator: MainCoordinator?
     
     private let headerText = ["가까운 여행지 둘러보기", "어디에서나, 여행은 살아보는거야!"]
     
     private lazy var delegates: [UICollectionViewDelegateFlowLayout]
-        = [NearbyDestinationDelegate(coordinator: coordinator), TravelStyleDelegate()]
+        = [NearbyDestinationDelegate(coordinator: coordinator!), TravelStyleDelegate()]
     
     private let dataSources: [UICollectionViewDataSource]
         = [NearbyDestinationDataSource(), TravelStyleDataSource()]

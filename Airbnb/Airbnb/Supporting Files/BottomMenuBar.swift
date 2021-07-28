@@ -13,6 +13,6 @@ class BottomMenuBar: UIView {
     
     @IBAction func touchUpNext(_ sender: Any) {
         NotificationCenter.default.post(name: .init("didTouchUpNext"), object: self)
-        coordinator?.show()
+        coordinator?.start()
     }
 }
