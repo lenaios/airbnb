@@ -8,23 +8,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OlY-6E-d5b">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewLayout key="collectionViewLayout" id="9yC-Z2-WFd" customClass="MainCollectionViewFlowLayout" customModule="Airbnb" customModuleProvider="target"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GJQ-1l-oHm">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
                                 <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="kTD-qB-lcG"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="V29-Hd-owc"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -33,7 +34,7 @@
                             <constraint firstItem="OlY-6E-d5b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4TY-mC-3Le"/>
                             <constraint firstAttribute="bottom" secondItem="OlY-6E-d5b" secondAttribute="bottom" id="GGd-dz-Uki"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OlY-6E-d5b" secondAttribute="trailing" id="i0Q-YS-EqU"/>
-                            <constraint firstItem="OlY-6E-d5b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wMA-X9-EdC"/>
+                            <constraint firstItem="OlY-6E-d5b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wMA-X9-EdC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4bc-Cj-vh3"/>
@@ -44,47 +45,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="757.97101449275374" y="93.75"/>
-        </scene>
-        <!--Calendar View Controller-->
-        <scene sceneID="D1b-eI-OYS">
-            <objects>
-                <viewController storyboardIdentifier="CalendarViewController" id="dk2-qq-6S9" customClass="CalendarViewController" customModule="Airbnb" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LHf-UT-EGU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vSt-Kp-mrW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="USv-YB-cJe">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="dk2-qq-6S9" id="5hI-6a-Bss"/>
-                                    <outlet property="delegate" destination="dk2-qq-6S9" id="t4s-wB-mB4"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="PPJ-vM-Uk0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="vSt-Kp-mrW" firstAttribute="top" secondItem="PPJ-vM-Uk0" secondAttribute="top" id="3HK-b7-xMb"/>
-                            <constraint firstItem="vSt-Kp-mrW" firstAttribute="leading" secondItem="PPJ-vM-Uk0" secondAttribute="leading" id="3IO-0u-gzA"/>
-                            <constraint firstItem="PPJ-vM-Uk0" firstAttribute="trailing" secondItem="vSt-Kp-mrW" secondAttribute="trailing" id="UoT-Qb-BRl"/>
-                            <constraint firstItem="PPJ-vM-Uk0" firstAttribute="bottom" secondItem="vSt-Kp-mrW" secondAttribute="bottom" id="kIB-MF-xcb"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="vSt-Kp-mrW" id="ZGN-GA-rz4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A40-EZ-hCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1465" y="94"/>
         </scene>
     </scenes>
     <resources>
