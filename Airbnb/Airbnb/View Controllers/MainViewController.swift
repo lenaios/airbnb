@@ -66,7 +66,7 @@ class MainViewController: UIViewController, Storyboarded {
     item.contentInsets = .init(top: 0, leading: 0, bottom: padding, trailing: padding)
     
     let groupSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(0.5),
+      widthDimension: .fractionalWidth(0.6),
       heightDimension: .fractionalWidth(0.4))
     let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 2)
     
@@ -121,9 +121,9 @@ extension MainViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     switch section {
     case 0:
-      return viewModel.cities?.value.count ?? 0
+      return viewModel.cities?.value?.count ?? 0
     case 1:
-      return viewModel.styles?.value.count ?? 0
+      return viewModel.styles?.value?.count ?? 0
     default:
       return 0
     }
@@ -133,14 +133,14 @@ extension MainViewController: UICollectionViewDataSource {
     switch indexPath.section {
     case 0:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NearbyDestinationCell.identifier, for: indexPath) as! NearbyDestinationCell
-      guard let value = viewModel.cities?.value[indexPath.item] else { return NearbyDestinationCell() }
+      guard let value = viewModel.cities?.value?[indexPath.item] else { return NearbyDestinationCell() }
       cell.image.image = UIImage(named: value.image)
       cell.city.text = value.name
       cell.distance.text = value.distnace
       return cell
     default:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TravelStyleCell.identifier, for: indexPath) as! TravelStyleCell
-      guard let value = viewModel.styles?.value[indexPath.item] else { return TravelStyleCell() }
+      guard let value = viewModel.styles?.value?[indexPath.item] else { return TravelStyleCell() }
       cell.imageView.image = UIImage(named: value.image)
       cell.textLabel.text = value.description
       return cell

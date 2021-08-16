@@ -13,8 +13,6 @@ class AccomodationListViewController: UIViewController {
   
   private var collectionView: UICollectionView!
   
-  var viewModel: [SearchResultViewModel] = SearchResultViewModels().viewModels
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     

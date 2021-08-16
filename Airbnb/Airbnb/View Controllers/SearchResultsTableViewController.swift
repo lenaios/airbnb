@@ -8,16 +8,6 @@
 import UIKit
 import MapKit
 
-class SubtitleTableViewCell: UITableViewCell {
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-  }
-  
-  required init?(coder: NSCoder) {
-    fatalError("init(coder:) has not been implemented")
-  }
-}
-
 protocol ResultsTableViewControllerDelegate: NSObject {
   func show()
 }
@@ -122,4 +112,12 @@ extension SearchResultsTableViewController: MKLocalSearchCompleterDelegate {
   }
 }
 
-
+final class SubtitleTableViewCell: UITableViewCell {
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+}

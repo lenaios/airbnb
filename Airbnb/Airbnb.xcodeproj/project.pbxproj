@@ -24,7 +24,7 @@
 		D042C01626C9137A004868ED /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C01526C9137A004868ED /* MainViewModel.swift */; };
 		D042C01826C95339004868ED /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C01726C95339004868ED /* City.swift */; };
 		D05070F726AA63C900B8F054 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */; };
-		D05070FB26AA6E3400B8F054 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* BottomNavigationBar.swift */; };
+		D05070FB26AA6E3400B8F054 /* SearchConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05070FA26AA6E3400B8F054 /* SearchConditionView.swift */; };
 		D07574ED269DA3E60083980B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07574EC269DA3E60083980B /* AppDelegate.swift */; };
 		D07574EF269DA3E60083980B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07574EE269DA3E60083980B /* SceneDelegate.swift */; };
 		D07574F1269DA3E60083980B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07574F0269DA3E60083980B /* MainViewController.swift */; };
@@ -72,7 +72,7 @@
 		D042C01526C9137A004868ED /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		D042C01726C95339004868ED /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
-		D05070FA26AA6E3400B8F054 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
+		D05070FA26AA6E3400B8F054 /* SearchConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConditionView.swift; sourceTree = "<group>"; };
 		D07574E9269DA3E60083980B /* Airbnb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airbnb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D07574EC269DA3E60083980B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D07574EE269DA3E60083980B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,10 +120,9 @@
 				D075750A269DD8B90083980B /* TravelStyleCell.swift */,
 				D0757518269E13720083980B /* AccomodationCollectionViewCell.swift */,
 				D0757519269E13720083980B /* AccomodationCollectionViewCell.xib */,
-				D05070FA26AA6E3400B8F054 /* BottomNavigationBar.swift */,
+				D05070FA26AA6E3400B8F054 /* SearchConditionView.swift */,
 				D0EC358326A3206100529357 /* CalendarDateCollectionViewCell.swift */,
 				D05070F626AA63C900B8F054 /* CalendarHeaderView.swift */,
-				D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */,
 				D03DDBE526ADD7F00096F756 /* ReservationView.xib */,
 				D03DDBE726ADD8070096F756 /* ReservationView.swift */,
 			);
@@ -146,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				D042C01526C9137A004868ED /* MainViewModel.swift */,
+				D03DDBDC26AC33EE0096F756 /* CalendarViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				D0757517269E12850083980B /* MainCoordinator.swift in Sources */,
 				D042C01826C95339004868ED /* City.swift in Sources */,
 				D03DDBE226ADBF0D0096F756 /* SearchResultsTableViewController.swift in Sources */,
-				D05070FB26AA6E3400B8F054 /* BottomNavigationBar.swift in Sources */,
+				D05070FB26AA6E3400B8F054 /* SearchConditionView.swift in Sources */,
 				D03DDBE426ADD3F20096F756 /* ReserveViewController.swift in Sources */,
 				D03DDBE826ADD8070096F756 /* ReservationView.swift in Sources */,
 				D03DDBE026ADB83E0096F756 /* SearchViewController.swift in Sources */,
