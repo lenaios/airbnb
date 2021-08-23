@@ -9,6 +9,22 @@ import Foundation
 
 class CalendarViewModel {
   var calendar = Calendar(identifier: .gregorian)
+  
+  let checkin = Box<Date>()
+  let checkout = Box<Date>()
+  
+  func selectDate(date: Date) {
+    guard let _ = checkin.value, let _ = checkout.value else {
+      if let checkin = checkin.value, checkin < date {
+        checkout.value = date
+      } else {
+        checkin.value = date
+      }
+      return
+    }
+    self.checkin.value = date
+    self.checkout.value = nil
+  }
 }
 
 extension CalendarViewModel {

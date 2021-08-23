@@ -10,8 +10,9 @@ import UIKit
 final class CalendarViewController: UIViewController, Storyboarded {
   
   private var collectionView: UICollectionView!
+  private let searchConditionView = SearchConditionView()
   
-  var viewModel = CalendarViewModel()
+  let viewModel = CalendarViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -21,6 +22,32 @@ final class CalendarViewController: UIViewController, Storyboarded {
     
     setupCollectionView()
     setupNavigationBar()
+    
+    viewModel.checkin.bind { date in
+      guard let date = date else {
+        self.searchConditionView.startDate.text = nil
+        return
+      }
+      let checkin = self.dateFormatter(date: date)
+      self.searchConditionView.startDate.text = checkin
+      self.searchConditionView.tableView.reloadData()
+    }
+    
+    viewModel.checkout.bind { date in
+      guard let date = date else {
+        self.searchConditionView.endDate.text = nil
+        return
+      }
+      let checkout = self.dateFormatter(date: date)
+      self.searchConditionView.endDate.text = checkout
+      self.searchConditionView.tableView.reloadData()
+    }
+  }
+  
+  func dateFormatter(date: Date) -> String {
+    let formatter = DateFormatter()
+    formatter.dateStyle = .medium
+    return formatter.string(from: date)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +58,10 @@ final class CalendarViewController: UIViewController, Storyboarded {
 
 private extension CalendarViewController {
   
-  @objc func reset() { }
+  @objc func reset() {
+    viewModel.checkin.value = nil
+    viewModel.checkout.value = nil
+  }
   
   func setupCollectionView() {
     let layout = UICollectionViewFlowLayout()
@@ -54,14 +84,13 @@ private extension CalendarViewController {
   }
   
   func setupNavigationBar() {
-    let height: CGFloat = 85
-    let navigationBar = BottomNavigationBar(
-      frame: .init(x: 0, y: view.frame.height - height, width: view.frame.width, height: height))
-    navigationBar.delegate = self
-    view.addSubview(navigationBar)
+    let height: CGFloat = (44 * 3) + 34 + 34 + 10
+    searchConditionView.frame = .init(x: 0, y: view.frame.height - height, width: view.frame.width, height: height)
+    searchConditionView.delegate = self
+    view.addSubview(searchConditionView)
   }
 }
-extension CalendarViewController: BottomNavigationBarDelegate {
+extension CalendarViewController: SearchConditionViewDelegate {
   func show() {
     navigationController?.pushViewController(AccomodationListViewController(), animated: true)
   }
@@ -106,23 +135,20 @@ extension CalendarViewController: UICollectionViewDataSource {
 }
 
 extension CalendarViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    referenceSizeForHeaderInSection section: Int
-  ) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
     return CGSize(width: view.frame.width, height: 74)
   }
   
-  func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    sizeForItemAt indexPath: IndexPath
-  ) -> CGSize {
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
     var totalSpace = flowLayout.minimumInteritemSpacing * CGFloat(6)
     totalSpace += flowLayout.sectionInset.left + flowLayout.sectionInset.right
     let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(7))
     return CGSize(width: size, height: 30)
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let date = viewModel.date(at: indexPath) else { return }
+    viewModel.selectDate(date: date)
   }
 }

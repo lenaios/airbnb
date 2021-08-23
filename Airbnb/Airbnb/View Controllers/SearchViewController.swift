@@ -50,7 +50,6 @@ class SearchViewController: UIViewController {
     
     title = "숙소 찾기"
     view.backgroundColor = .systemBackground
-    //definesPresentationContext = true
     
     setupCollectionView()
     

@@ -22,7 +22,8 @@ class CalendarHeaderView: UICollectionReusableView {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    yearMonthLabel.frame = CGRect(x: padding, y: bounds.minY, width: frame.width - (padding * 2), height: bounds.height)
+    yearMonthLabel.frame = CGRect(
+      x: padding, y: bounds.minY, width: frame.width - (padding * 2), height: bounds.height)
     addSubview(yearMonthLabel)
   }
   
